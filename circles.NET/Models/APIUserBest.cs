@@ -4,18 +4,15 @@ using Newtonsoft.Json;
 namespace circles.NET.Models
 {
     /// <summary>
-    /// A class representing an osu! score returned from API
+    /// A class representing an osu! score from one of player top scores
     /// </summary>
-    public sealed class APIScore
+    public sealed class APIUserBest
     {
-        [JsonProperty(PropertyName = "score_id")]
-        public long ID { get; set; }
+        [JsonProperty(PropertyName = "beatmap_id")]
+        public long BeatmapId { get; set; }
 
         [JsonProperty(PropertyName = "score")]
         public long Score { get; set; }
-
-        [JsonProperty(PropertyName = "username")]
-        public string Username { get; set; }
 
         [JsonProperty(PropertyName = "maxcombo")]
         public int MaxCombo { get; set; }
@@ -56,5 +53,8 @@ namespace circles.NET.Models
 
         [JsonProperty(PropertyName = "pp")]
         public float Pp { get; set; }
+
+        [JsonProperty(PropertyName = "accuracy")]
+        public float Accuracy { get; set; }
     }
 }

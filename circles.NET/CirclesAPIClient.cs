@@ -47,16 +47,10 @@ namespace circles.NET
 
         //GetUsersAsync overloads
 
-        public async Task<APIUser[]> GetUsersAsync(string name)
-            => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name));
-
-        public async Task<APIUser[]> GetUsersAsync(int id)
-            => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "type", "id"));
-
-        public async Task<APIUser[]> GetUsersAsync(string name, Gamemode mode)
+        public async Task<APIUser[]> GetUsersAsync(string name, Gamemode mode = Gamemode.Standard)
             => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name, "m", (int)mode));
 
-        public async Task<APIUser[]> GetUsersAsync(int id, Gamemode mode)
+        public async Task<APIUser[]> GetUsersAsync(int id, Gamemode mode = Gamemode.Standard)
             => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "m", (int)mode, "type", "id"));
 
         //GetScoresAsync overloads
