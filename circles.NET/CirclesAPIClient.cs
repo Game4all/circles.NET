@@ -61,6 +61,11 @@ namespace circles.NET
         public async Task<APIScore[]> GetScoresAsync(int beatmapId, string username = null, Gamemode mode = Gamemode.Standard, Mods? mods = null, int? limit = null)
             => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "mods", (int)mods, "limit", limit));
 
+        //GetUserBestAsync overloads
+
+        public async Task<APIUserBest[]> GetUserBestAsync(string username, Gamemode mode = Gamemode.Standard, int? limit = null)
+            => await Client.GetFromJSON<APIUserBest[]>(CreateURL("get_user_best", "k", APIKey, "u", username, "mode", (int)mode, "limit", limit));
+
         /// <summary>
         /// The defaut address to which API requests are made.
         /// <para>Override this if you need to pass API requests to eg: Ripple API</para>
