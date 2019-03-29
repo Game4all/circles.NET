@@ -45,7 +45,7 @@ namespace circles.NET
 
         protected string ApiKey;
 
-        //GetUsersAsync
+        //GetUsersAsync overloads
 
         public async Task<APIUser[]> GetUsersAsync(string name) => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name));
 
