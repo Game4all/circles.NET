@@ -47,17 +47,25 @@ namespace circles.NET
 
         //GetUsersAsync overloads
 
-        public async Task<APIUser[]> GetUsersAsync(string name) => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name));
+        public async Task<APIUser[]> GetUsersAsync(string name)
+            => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name));
 
-        public async Task<APIUser[]> GetUsersAsync(int id) => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "type", "id"));
+        public async Task<APIUser[]> GetUsersAsync(int id)
+            => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "type", "id"));
 
-        public async Task<APIUser[]> GetUsersAsync(string name, Gamemode mode) => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name, "m", (int)mode));
+        public async Task<APIUser[]> GetUsersAsync(string name, Gamemode mode)
+            => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name, "m", (int)mode));
 
-        public async Task<APIUser[]> GetUsersAsync(int id, Gamemode mode) => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "m", (int)mode, "type", "id"));
+        public async Task<APIUser[]> GetUsersAsync(int id, Gamemode mode)
+            => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "m", (int)mode, "type", "id"));
 
         //GetScoresAsync overloads
 
-        public async Task<APIScore[]> GetScoresAsync(int beatmapId) => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId));
+        public async Task<APIScore[]> GetScoresAsync(int beatmapId) 
+            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId));
+
+        public async Task<APIScore[]> GetScoresAsync(int beatmapId, string username = null, Gamemode mode = Gamemode.Standard, Mods? mods = null, int? limit = null)
+            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "mods", (int)mods, "limit", limit));
 
         /// <summary>
         /// The defaut address to which API requests are made.
