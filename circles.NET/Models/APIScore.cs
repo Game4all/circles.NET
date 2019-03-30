@@ -1,5 +1,6 @@
 ﻿using circles.NET.Enums;
 using Newtonsoft.Json;
+using System;
 
 namespace circles.NET.Models
 {
@@ -49,7 +50,7 @@ namespace circles.NET.Models
         public long UserId { get; set; }
 
         [JsonProperty(PropertyName = "date")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [JsonProperty(PropertyName = "rank")]
         public string Rank { get; set; }

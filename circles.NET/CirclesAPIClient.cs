@@ -56,10 +56,7 @@ namespace circles.NET
         //GetScoresAsync overloads
 
         public async Task<APIScore[]> GetScoresAsync(long beatmapId, string username = null, Gamemode mode = Gamemode.Standard, Mods? mods = null, int? limit = null)
-            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "mods", (int)mods, "limit", limit));
-
-        public async Task<APIScore[]> GetScoresAsync(long beatmapId, string username = null, Gamemode mode = Gamemode.Standard, int? limit = null)
-            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "limit", limit));
+            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "mods", (int?)mods, "limit", limit));
 
         //GetUserBestAsync overloads
 
@@ -73,11 +70,11 @@ namespace circles.NET
 
         //GetBeatmapsAsync overloads
 
-        public async Task<APIBeatmap[]> GetBeatmapsByMapsetAsync(long? mapset_id = null, string since = null, string creator = null, Gamemode gamemode = Gamemode.Standard, Conversions includeConversions = Conversions.NotIncluded, string hash = null, int? limit = null)
-            => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since, "u", creator, "m", (int)gamemode, "a", (int)includeConversions, "h", hash, "m", mapset_id, "limit", limit));
+        public async Task<APIBeatmap[]> GetBeatmapsByMapsetAsync(long? mapset_id = null, DateTime? since = null, string creator = null, Gamemode? gamemode = null, Conversions? includeConversions = null, string hash = null, int? limit = null)
+            => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "m", mapset_id, "limit", limit));
 
-        public async Task<APIBeatmap[]> GetBeatmapsByIdAsync(long? beatmap_id = null, string since = null, string creator = null, Gamemode gamemode = Gamemode.Standard, Conversions includeConversions = Conversions.NotIncluded, string hash = null, int? limit = null)
-            => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since, "u", creator, "m", (int)gamemode, "a", (int)includeConversions, "h", hash, "b", beatmap_id, "limit", limit));
+        public async Task<APIBeatmap[]> GetBeatmapsByIdAsync(long? beatmap_id = null, DateTime? since = null, string creator = null, Gamemode? gamemode = null, Conversions? includeConversions = null, string hash = null, int? limit = null)
+            => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "b", beatmap_id, "limit", limit));
 
         /// <summary>
         /// The defaut address to which API requests are made.

@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using circles.NET.Enums;
+using Newtonsoft.Json;
+using System;
 
 namespace circles.NET.Models
 {
@@ -8,19 +10,19 @@ namespace circles.NET.Models
     public sealed class APIBeatmap
     {
         [JsonProperty(PropertyName = "beatmapset_id")]
-        public string MapsetId { get; set; }
+        public long MapsetId { get; set; }
 
         [JsonProperty(PropertyName = "beatmap_id")]
-        public string BeatmapId { get; set; }
+        public long BeatmapId { get; set; }
 
         [JsonProperty(PropertyName = "approved")]
         public string ApprovedStatus { get; set; }
 
         [JsonProperty(PropertyName = "total_length")]
-        public string TotalLength { get; set; }
+        public int TotalLength { get; set; }
 
         [JsonProperty(PropertyName = "hit_length")]
-        public string HitLength { get; set; }
+        public int HitLength { get; set; }
 
         [JsonProperty(PropertyName = "version")]
         public string Difficulty { get; set; }
@@ -29,25 +31,25 @@ namespace circles.NET.Models
         public string MD5 { get; set; }
 
         [JsonProperty(PropertyName = "diff_size")]
-        public string CS { get; set; }
+        public float CS { get; set; }
 
         [JsonProperty(PropertyName = "diff_overall")]
-        public string OD { get; set; }
+        public float OD { get; set; }
 
         [JsonProperty(PropertyName = "diff_approach")]
-        public string AR { get; set; }
+        public float AR { get; set; }
 
         [JsonProperty(PropertyName = "diff_drain")]
-        public string HP { get; set; }
+        public float HP { get; set; }
 
         [JsonProperty(PropertyName = "mode")]
-        public string Gamemode { get; set; }
+        public Gamemode Gamemode { get; set; }
 
         [JsonProperty(PropertyName = "approved_date")]
-        public string ApprovedDate { get; set; }
+        public DateTime? ApprovedDate { get; set; }
 
         [JsonProperty(PropertyName = "last_update")]
-        public string LastUpdate { get; set; }
+        public DateTime LastUpdate { get; set; }
 
         [JsonProperty(PropertyName = "artist")]
         public string Artist { get; set; }
@@ -59,7 +61,7 @@ namespace circles.NET.Models
         public string Creator { get; set; }
 
         [JsonProperty(PropertyName = "bpm")]
-        public string Bpm { get; set; }
+        public float Bpm { get; set; }
 
         [JsonProperty(PropertyName = "source")]
         public string Source { get; set; }
@@ -74,18 +76,18 @@ namespace circles.NET.Models
         public string Language { get; set; }
 
         [JsonProperty(PropertyName = "favourite_count")]
-        public string FavouriteCount { get; set; }
+        public int FavouriteCount { get; set; }
 
         [JsonProperty(PropertyName = "playcount")]
-        public string Playcount { get; set; }
+        public int Playcount { get; set; }
 
         [JsonProperty(PropertyName = "passcount")]
-        public string Passcount { get; set; }
+        public int Passcount { get; set; }
 
         [JsonProperty(PropertyName = "max_combo")]
-        public string MaxCombo { get; set; }
+        public int MaxCombo { get; set; }
 
         [JsonProperty(PropertyName = "difficultyrating")]
-        public string StarRating { get; set; }
+        public float StarRating { get; set; }
     }
 }
