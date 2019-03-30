@@ -76,6 +76,21 @@ namespace circles.NET
         public async Task<APIBeatmap[]> GetBeatmapsByIdAsync(long? beatmap_id = null, DateTime? since = null, string creator = null, Gamemode? gamemode = null, Conversions? includeConversions = null, string hash = null, int? limit = null)
             => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "b", beatmap_id, "limit", limit));
 
+        //GetReplayAsync overloads
+
+        public async Task<APIReplay> GetReplayAsync(string username, long beatmapId, Gamemode mode)
+        {
+            try
+            {
+                var replay = await Client.GetFromJSON<APIReplay>(CreateURL("get_replay", "k", APIKey, "u", username, "b", beatmapId, "m", (int)mode));
+                return replay;
+            }
+            catch (Exception e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// The defaut address to which API requests are made.
         /// <para>Override this if you need to pass API requests to eg: Ripple API</para>
