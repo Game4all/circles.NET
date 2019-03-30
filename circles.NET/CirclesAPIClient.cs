@@ -165,7 +165,7 @@ namespace circles.NET
         /// <param name="roomId">The Room Id</param>
         /// <returns></returns>
         public async Task<APIMultiplayerRoom> GetMultiplayerRoomsAsync(long roomId)
-        => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_replay", "k", APIKey, "mp", roomId));
+        => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_room", "k", APIKey, "mp", roomId));
 
         
         /// <summary>
