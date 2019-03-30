@@ -8,7 +8,7 @@ namespace circles.NET.Models
         [JsonProperty(PropertyName = "content")]
         public string Content { get; set; }
 
-        [JsonProperty(PropertyName = "error")]
+        [JsonProperty(PropertyName = "error")] //super hacky way of throwing if error field is set
         internal string Error { set { throw new ReplayUnavalaibleException(value); } }
     }
 }

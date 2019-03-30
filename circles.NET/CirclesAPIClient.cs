@@ -91,6 +91,11 @@ namespace circles.NET
             }
         }
 
+        //GetMatchAsync overloads
+
+        public async Task<APIMultiplayerRoom> GetMultiplayerRoomsAsync(long roomId)
+        => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_replay", "k", APIKey, "mp", roomId));
+
         /// <summary>
         /// The defaut address to which API requests are made.
         /// <para>Override this if you need to pass API requests to eg: Ripple API</para>
