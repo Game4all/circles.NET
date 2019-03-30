@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace circles.NET.Converters
 {
-    public class ModsJSONDeserializer : JsonConverter
+    public class ModsJSONConverter : JsonConverter
     {
-        public ModsJSONDeserializer()
+        public ModsJSONConverter()
         {
         }
 

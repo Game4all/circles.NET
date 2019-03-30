@@ -44,7 +44,7 @@ namespace circles.NET.Models
         public string Perfect { get; set; }
 
         [JsonProperty(PropertyName = "enabled_mods")]
-        [JsonConverter(typeof(ModsJSONDeserializer))]
+        [JsonConverter(typeof(ModsJSONConverter))]
         public Mods[] Mods { get; set; }
 
         [JsonProperty(PropertyName = "user_id")]
