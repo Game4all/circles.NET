@@ -23,6 +23,10 @@ namespace circles.NET
             Client = new CirclesHttpClient(this);
         }
 
+        /// <summary>
+        /// Constructs an instance of <see cref="CirclesAPIClient"/> with the API key given as parameter
+        /// </summary>
+        /// <param name="apiKey"></param>
         public CirclesAPIClient(string apiKey)
             : this()
         {
