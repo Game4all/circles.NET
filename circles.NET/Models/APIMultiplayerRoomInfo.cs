@@ -3,6 +3,9 @@ using System;
 
 namespace circles.NET.Models
 {
+    /// <summary>
+    /// Information about an ongoing or finished <see cref="APIMultiplayerRoom"/>
+    /// </summary>
     public sealed class APIMultiplayerRoomInfo
     {
         [JsonProperty(PropertyName = "match_id")]

@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace circles.NET.Models
 {
+    /// <summary>
+    /// A class representing an osu! ongoing or finished multiplayer game returned by API
+    /// </summary>
     public sealed class APIMultiplayerGame
     {
         [JsonProperty(PropertyName = "game_id")]

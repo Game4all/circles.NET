@@ -3,6 +3,9 @@ using Newtonsoft.Json;
 
 namespace circles.NET.Models
 {
+    /// <summary>
+    /// A class representing replay data returned by API
+    /// </summary>
     public sealed class APIReplay
     {
         [JsonProperty(PropertyName = "content")]

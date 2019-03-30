@@ -2,6 +2,9 @@
 
 namespace circles.NET.Models
 {
+    /// <summary>
+    /// A class representing an osu! ongoing or finished multiplayer room returned by API
+    /// </summary>
     public sealed class APIMultiplayerRoom
     {
         [JsonProperty(PropertyName = "games")]

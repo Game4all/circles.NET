@@ -43,41 +43,105 @@ namespace circles.NET
             }
         }
 
-        protected string ApiKey;
+        private string ApiKey;
 
         //GetUsersAsync overloads
 
+        /// <summary>
+        /// Gets a <see cref="APIUser[]"/> matching given parameters asynchronously
+        /// </summary>
+        /// <param name="name">The username to search for</param>
+        /// <param name="mode">The gamemode</param>
+        /// <returns></returns>
         public async Task<APIUser[]> GetUsersAsync(string name, Gamemode mode = Gamemode.Standard)
             => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name, "m", (int)mode));
 
+
+        /// <summary>
+        /// Same as <see cref="GetUsersAsync(string, Gamemode)"/> but takes UserID instead of username
+        /// </summary>
+        /// <param name="name">The UserID to search for</param>
+        /// <param name="mode">The gamemode (defaults to <see cref="Gamemode.Standard"/>)</param>
         public async Task<APIUser[]> GetUsersAsync(int id, Gamemode mode = Gamemode.Standard)
             => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", id, "m", (int)mode, "type", "id"));
 
         //GetScoresAsync overloads
 
+        /// <summary>
+        /// Gets a list of scores for the given beatmap id matching given parameters asynchronously
+        /// </summary>
+        /// <param name="beatmapId">The beatmap id to return scores from</param>
+        /// <param name="username">The name of the user to return score from (<see cref="null"/> by default)</param>
+        /// <param name="mode">The gamemode (defaults to <see cref="Gamemode.Standard"/>)</param>
+        /// <param name="mods">A mods bitflag (defaults to null)</param>
+        /// <param name="limit">A limit of results to return (returns first 500 results by default)</param>
+        /// <returns></returns>
         public async Task<APIScore[]> GetScoresAsync(long beatmapId, string username = null, Gamemode mode = Gamemode.Standard, Mods? mods = null, int? limit = null)
             => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "mods", (int?)mods, "limit", limit));
 
         //GetUserBestAsync overloads
 
+        /// <summary>
+        /// Gets a list of top plays for the given username asynchronously
+        /// </summary>
+        /// <param name="username">The username of the player to return top plays from</param>
+        /// <param name="mode">The gamemode (defaults to <see cref="Gamemode.Standard"/>)</param>
+        /// <param name="limit">A limit of results to return (returns first 500 results by default)</param>
+        /// <returns></returns>
         public async Task<APIUserBest[]> GetUserBestAsync(string username, Gamemode mode = Gamemode.Standard, int? limit = null)
             => await Client.GetFromJSON<APIUserBest[]>(CreateURL("get_user_best", "k", APIKey, "u", username, "mode", (int)mode, "limit", limit));
 
         //GetUserRecent overloads
 
+        /// <summary>
+        /// Gets a list of recent plays for the given username asynchronously
+        /// </summary>
+        /// <param name="username">The username of the player to return recent plays from</param>
+        /// <param name="mode">The gamemode (defaults to <see cref="Gamemode.Standard"/>)</param>
+        /// <param name="limit">A limit of results to return (returns first 500 results by default)</param>
+        /// <returns></returns>
         public async Task<APIUserRecent[]> GetUserRecentAsync(string username, Gamemode mode = Gamemode.Standard, int? limit = null)
             => await Client.GetFromJSON<APIUserRecent[]>(CreateURL("get_user_recent", "k", APIKey, "u", username, "mode", (int)mode, "limit", limit));
 
         //GetBeatmapsAsync overloads
 
+        /// <summary>
+        /// Gets a list of beatmaps matching the given mapsetId and parameters asynchronously
+        /// </summary>
+        /// <param name="mapset_id">The mapset id (required)</param>
+        /// <param name="since"></param>
+        /// <param name="creator"></param>
+        /// <param name="gamemode"></param>
+        /// <param name="includeConversions"></param>
+        /// <param name="hash"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public async Task<APIBeatmap[]> GetBeatmapsByMapsetAsync(long? mapset_id = null, DateTime? since = null, string creator = null, Gamemode? gamemode = null, Conversions? includeConversions = null, string hash = null, int? limit = null)
             => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "m", mapset_id, "limit", limit));
 
+        /// <summary>
+        /// Gets a list of beatmaps matching the given beatmapId and parameters asynchronously
+        /// </summary>
+        /// <param name="beatmap_id"></param>
+        /// <param name="since"></param>
+        /// <param name="creator"></param>
+        /// <param name="gamemode"></param>
+        /// <param name="includeConversions"></param>
+        /// <param name="hash"></param>
+        /// <param name="limit"></param>
+        /// <returns></returns>
         public async Task<APIBeatmap[]> GetBeatmapsByIdAsync(long? beatmap_id = null, DateTime? since = null, string creator = null, Gamemode? gamemode = null, Conversions? includeConversions = null, string hash = null, int? limit = null)
             => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "b", beatmap_id, "limit", limit));
 
         //GetReplayAsync overloads
 
+        /// <summary>
+        /// Gets replay data from a specific play from a specific user asynchronously
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="beatmapId"></param>
+        /// <param name="mode"></param>
+        /// <returns></returns>
         public async Task<APIReplay> GetReplayAsync(string username, long beatmapId, Gamemode mode)
         {
             try
@@ -91,12 +155,23 @@ namespace circles.NET
             }
         }
 
-        //GetMatchAsync overloads
-
+        /// <summary>
+        /// Gets data about a multiplayer room asynchronously
+        /// </summary>
+        /// <param name="roomId">The Room Id</param>
+        /// <returns></returns>
         public async Task<APIMultiplayerRoom> GetMultiplayerRoomsAsync(long roomId)
         => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_replay", "k", APIKey, "mp", roomId));
 
-        //Custom requests
+        
+        /// <summary>
+        /// Performs a custom request against the given end_point with custom queryStrings
+        /// <para>NOTE that the queryStrings already contains APIKey by default</para>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="endPoint"></param>
+        /// <param name="queryStrings"></param>
+        /// <returns></returns>
         public async Task<T> GetRawAsync<T>(string endPoint, params object[] queryStrings)
             => await Client.GetFromJSON<T>(CreateURL(endPoint, "k", APIKey, queryStrings));
 
