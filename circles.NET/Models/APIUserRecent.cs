@@ -1,6 +1,7 @@
 ﻿using circles.NET.Converters;
 using circles.NET.Enums;
 using Newtonsoft.Json;
+using System;
 
 namespace circles.NET.Models
 {
@@ -37,7 +38,8 @@ namespace circles.NET.Models
         public int CountGeki { get; set; }
 
         [JsonProperty(PropertyName = "perfect")]
-        public string Perfect { get; set; }
+        [JsonConverter(typeof(StringBoolConverter))]
+        public bool Perfect { get; set; }
 
         [JsonProperty(PropertyName = "enabled_mods")]
         [JsonConverter(typeof(ModsJSONConverter))]
@@ -47,7 +49,7 @@ namespace circles.NET.Models
         public long UserId { get; set; }
 
         [JsonProperty(PropertyName = "date")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [JsonProperty(PropertyName = "rank")]
         public string Rank { get; set; }

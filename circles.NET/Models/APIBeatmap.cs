@@ -85,7 +85,7 @@ namespace circles.NET.Models
         public int Passcount { get; set; }
 
         [JsonProperty(PropertyName = "max_combo")]
-        public int MaxCombo { get; set; }
+        public int? MaxCombo { get; set; }
 
         [JsonProperty(PropertyName = "difficultyrating")]
         public float StarRating { get; set; }

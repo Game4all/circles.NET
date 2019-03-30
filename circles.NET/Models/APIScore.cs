@@ -41,7 +41,8 @@ namespace circles.NET.Models
         public int CountGeki { get; set; }
 
         [JsonProperty(PropertyName = "perfect")]
-        public string Perfect { get; set; }
+        [JsonConverter(typeof(StringBoolConverter))]
+        public bool Perfect { get; set; }
 
         [JsonProperty(PropertyName = "enabled_mods")]
         [JsonConverter(typeof(ModsJSONConverter))]
