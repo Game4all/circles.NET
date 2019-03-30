@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using circles.NET.Enums;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace circles.NET.Enums
+namespace circles.NET.Converters
 {
     public class ModsJSONDeserializer : JsonConverter
     {

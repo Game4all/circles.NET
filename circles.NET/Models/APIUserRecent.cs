@@ -1,4 +1,5 @@
-﻿using circles.NET.Enums;
+﻿using circles.NET.Converters;
+using circles.NET.Enums;
 using Newtonsoft.Json;
 
 namespace circles.NET.Models
