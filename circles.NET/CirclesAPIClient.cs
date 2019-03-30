@@ -96,6 +96,10 @@ namespace circles.NET
         public async Task<APIMultiplayerRoom> GetMultiplayerRoomsAsync(long roomId)
         => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_replay", "k", APIKey, "mp", roomId));
 
+        //Custom requests
+        public async Task<T> GetRawAsync<T>(string endPoint, params object[] queryStrings)
+            => await Client.GetFromJSON<T>(CreateURL(endPoint, "k", APIKey, queryStrings));
+
         /// <summary>
         /// The defaut address to which API requests are made.
         /// <para>Override this if you need to pass API requests to eg: Ripple API</para>
