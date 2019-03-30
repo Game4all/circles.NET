@@ -1,4 +1,5 @@
-﻿using circles.NET.Enums;
+﻿using circles.NET.Converters;
+using circles.NET.Enums;
 using Newtonsoft.Json;
 using System;
 
@@ -16,7 +17,8 @@ namespace circles.NET.Models
         public long BeatmapId { get; set; }
 
         [JsonProperty(PropertyName = "approved")]
-        public string ApprovedStatus { get; set; }
+        [JsonConverter(typeof(ApprovedStatusConverter))]
+        public ApprovedStatus ApprovedStatus { get; set; }
 
         [JsonProperty(PropertyName = "total_length")]
         public int TotalLength { get; set; }

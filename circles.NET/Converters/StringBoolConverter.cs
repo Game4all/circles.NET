@@ -3,7 +3,7 @@ using System;
 
 namespace circles.NET.Converters
 {
-    class StringBoolConverter : JsonConverter
+    internal class StringBoolConverter : JsonConverter
     {
         public StringBoolConverter()
         {
