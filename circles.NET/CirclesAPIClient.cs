@@ -121,7 +121,7 @@ namespace circles.NET
         /// <param name="limit"></param>
         /// <returns></returns>
         public async Task<APIBeatmap[]> GetBeatmapsByMapsetAsync(long? mapset_id = null, DateTime? since = null, string creator = null, Gamemode? gamemode = null, Conversions? includeConversions = null, string hash = null, int? limit = null)
-            => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "m", mapset_id, "limit", limit));
+            => await Client.GetFromJSON<APIBeatmap[]>(CreateURL("get_beatmaps", "k", APIKey, "since", since?.ToString("s"), "u", creator, "m", (int?)gamemode, "a", (int?)includeConversions, "h", hash, "s", mapset_id, "limit", limit));
 
         /// <summary>
         /// Gets a list of beatmaps matching the given beatmapId and parameters asynchronously
