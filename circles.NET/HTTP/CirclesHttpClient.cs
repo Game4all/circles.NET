@@ -1,5 +1,6 @@
 ﻿using circles.NET.Exceptions;
 using Newtonsoft.Json;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace circles.NET.HTTP
     {
         private CirclesAPIClient apiClient;
 
+        public TraceListener DebugTrace { get; set; }
+
         internal CirclesHttpClient(CirclesAPIClient cli)
         {
             apiClient = cli;
@@ -20,12 +23,14 @@ namespace circles.NET.HTTP
 
         public async Task<T> GetFromJSON<T>(string url)
         {
+            DebugTrace?.WriteLine($"Requesting url: {url}");
             var request = await GetAsync(url);
 
             if ((int)request.StatusCode == 401) //official osu! api returns a 401 error code when API key is invalid.
                 throw new InvalidAPIKeyException(apiClient.APIKey);
 
             request.EnsureSuccessStatusCode();
+            DebugTrace.WriteLine($"Request at {url} was sucessful");
 
             var content = await request.Content.ReadAsStringAsync();
 

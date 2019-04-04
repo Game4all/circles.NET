@@ -208,7 +208,6 @@ namespace circles.NET
                 if (queryStrings[i + 1] != null) //if the query string value is != null , let's add it to the url
                     sb.Append($"&{queryStrings[i].ToString()}={queryStrings[i + 1].ToString()}");
             }
-            Console.WriteLine(sb.ToString());
             return sb.ToString();
         }
     }
