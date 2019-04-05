@@ -42,7 +42,7 @@ namespace circles.NET
             set
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new InvalidAPIKeyException(value);
+                    throw new InvalidAPIKeyException();
                 ApiKey = value;
             }
         }
