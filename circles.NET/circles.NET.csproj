@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Game4all</Authors>
+    <Company />
+    <Description>An asynchronous .NET Standard wrapper for the osu! api
+Please note this library is ASYNCHRONOUS only</Description>
+    <PackageLicenseUrl>https://tldrlegal.com/license/unlicense</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/Game4all/circles.NET</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>osu! api C# NetStandard osugame async asynchronous</PackageTags>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
