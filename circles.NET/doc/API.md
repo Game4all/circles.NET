@@ -13,7 +13,7 @@
 - [APIUserBest](#T-circles-NET-Models-APIUserBest 'circles.NET.Models.APIUserBest')
 - [APIUserRecent](#T-circles-NET-Models-APIUserRecent 'circles.NET.Models.APIUserRecent')
 - [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient')
-  - [Constructor](#M-circles-NET-CirclesAPIClient-#ctor-System-String- 'circles.NET.CirclesAPIClient.#ctor(System.String)')
+  - [Constructor(apiKey)](#M-circles-NET-CirclesAPIClient-#ctor-System-String- 'circles.NET.CirclesAPIClient.#ctor(System.String)')
   - [APIKey](#P-circles-NET-CirclesAPIClient-APIKey 'circles.NET.CirclesAPIClient.APIKey')
   - [BaseEndpoint](#P-circles-NET-CirclesAPIClient-BaseEndpoint 'circles.NET.CirclesAPIClient.BaseEndpoint')
   - [Client](#P-circles-NET-CirclesAPIClient-Client 'circles.NET.CirclesAPIClient.Client')
@@ -869,7 +869,7 @@ circles.NET
 An asynchronous client wrapper class for the osu! api v1
 
 <a name='M-circles-NET-CirclesAPIClient-#ctor-System-String-'></a>
-### #ctor(apiKey) `constructor`
+### Constructor(apiKey) `constructor`
 
 ##### Summary
 
@@ -986,7 +986,7 @@ Gets data about a multiplayer room asynchronously
 | roomId | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The Room Id |
 
 <a name='M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]-'></a>
-### GetRawAsync\`\`1(endPoint,queryStrings) `method`
+### GetRawAsync\<T>\(endPoint,queryStrings) `method`
 
 ##### Summary
 
