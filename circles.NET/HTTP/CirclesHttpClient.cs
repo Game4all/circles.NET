@@ -27,10 +27,10 @@ namespace circles.NET.HTTP
             var request = await GetAsync(url);
 
             if ((int)request.StatusCode == 401) //official osu! api returns a 401 error code when API key is invalid.
-                throw new InvalidAPIKeyException(apiClient.APIKey);
+                throw new InvalidAPIKeyException();
 
             request.EnsureSuccessStatusCode();
-            DebugTrace.WriteLine($"Request at {url} was sucessful");
+            DebugTrace?.WriteLine($"Request at {url} was sucessful");
 
             var content = await request.Content.ReadAsStringAsync();
 
