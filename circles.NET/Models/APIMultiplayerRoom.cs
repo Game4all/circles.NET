@@ -11,12 +11,12 @@ namespace circles.NET.Models
         /// List of pasts and ongoing games
         /// </summary>
         [JsonProperty(PropertyName = "games")]
-        public APIMultiplayerGame[] Games { get; set; }
+        public APIMultiplayerGame[] Games { get; private set; }
 
         /// <summary>
         /// Info about this <see cref="APIMultiplayerRoom"/>
         /// </summary>
         [JsonProperty(PropertyName = "match")]
-        public APIMultiplayerRoomInfo Info { get; set; }
+        public APIMultiplayerRoomInfo Info { get; private set; }
     }
 }
