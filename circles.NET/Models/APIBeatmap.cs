@@ -168,7 +168,7 @@ namespace circles.NET.Models
         public int? MaxCombo { get; set; }
 
         /// <summary>
-        /// The star rating of this beatmap
+        /// The difficulty star rating of this beatmap
         /// </summary>
         [JsonProperty(PropertyName = "difficultyrating")]
         public float StarRating { get; set; }

@@ -207,7 +207,7 @@ Source of the beatmap's music
 
 ##### Summary
 
-The star rating of this beatmap
+The difficulty star rating of this beatmap
 
 <a name='P-circles-NET-Models-APIBeatmap-Tags'></a>
 ### Tags `property`
