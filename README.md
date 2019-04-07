@@ -1,7 +1,11 @@
 <div align="center">
 <h1><code>circles.NET</code></h1>
 An asynchronous <b>.NET Standard wrapper</b> for the <b>osu! api</b>
+<br/>
+<img alt="Nuget" src="https://img.shields.io/nuget/v/circles.NET.svg?label=NuGet&logo=nuget&logoColor=lightblue">
 </div>
+
+
 
 ## Get Started
 ```csharp
