@@ -60,7 +60,6 @@ namespace circles.NET
         public async Task<APIUser[]> GetUsersAsync(string name, Gamemode mode = Gamemode.Standard)
             => await Client.GetFromJSON<APIUser[]>(CreateURL("get_user", "k", APIKey, "u", name, "m", (int)mode));
 
-
         /// <summary>
         /// Same as <see cref="GetUsersAsync(string, Gamemode)"/> but takes UserID instead of username
         /// </summary>
@@ -167,7 +166,6 @@ namespace circles.NET
         public async Task<APIMultiplayerRoom> GetMultiplayerRoomsAsync(long roomId)
         => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_room", "k", APIKey, "mp", roomId));
 
-        
         /// <summary>
         /// Performs a custom request against the given end_point with custom queryStrings
         /// <para>NOTE that the queryStrings already contains APIKey by default</para>
