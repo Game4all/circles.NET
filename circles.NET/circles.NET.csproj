@@ -6,7 +6,7 @@
     <Company />
     <Description>An asynchronous .NET Standard wrapper for the osu! api
 Please note this library is ASYNCHRONOUS only</Description>
-    <PackageLicenseUrl>https://tldrlegal.com/license/unlicense</PackageLicenseUrl>
+    <PackageLicense>https://tldrlegal.com/license/unlicense</PackageLicense>
     <RepositoryUrl>https://github.com/Game4all/circles.NET</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>osu! api C# NetStandard osugame async asynchronous</PackageTags>
