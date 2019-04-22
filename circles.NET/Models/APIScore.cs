@@ -8,7 +8,7 @@ namespace circles.NET.Models
     /// <summary>
     /// A class representing an osu! score returned from API
     /// </summary>
-    public sealed class APIScore
+    public sealed class APIScore : APIModel
     {
         /// <summary>
         /// The ID of this score

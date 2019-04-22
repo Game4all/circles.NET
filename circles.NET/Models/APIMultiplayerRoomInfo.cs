@@ -6,7 +6,7 @@ namespace circles.NET.Models
     /// <summary>
     /// Information about an ongoing or finished <see cref="APIMultiplayerRoom"/>
     /// </summary>
-    public sealed class APIMultiplayerRoomInfo
+    public sealed class APIMultiplayerRoomInfo : APIModel
     {
         /// <summary>
         /// The ID of this multiplayer room

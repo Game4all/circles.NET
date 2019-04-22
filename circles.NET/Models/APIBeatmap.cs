@@ -8,7 +8,7 @@ namespace circles.NET.Models
     /// <summary>
     /// A class representing an osu! beatmap returned by API
     /// </summary>
-    public sealed class APIBeatmap
+    public sealed class APIBeatmap : APIModel
     {
         /// <summary>
         /// The ID of the mapset this beatmap belongs to

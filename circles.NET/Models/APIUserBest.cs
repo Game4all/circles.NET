@@ -8,7 +8,7 @@ namespace circles.NET.Models
     /// <summary>
     /// A class representing an osu! score from one of player top scores
     /// </summary>
-    public sealed class APIUserBest
+    public sealed class APIUserBest : APIModel
     {
         /// <summary>
         /// The ID of the beatmap (not BeatmapSet) this score was achieved on

@@ -5,7 +5,7 @@ namespace circles.NET.Models
     /// <summary>
     /// A class representing an osu! user returned from API
     /// </summary>
-    public sealed class APIUser
+    public sealed class APIUser : APIModel
     {
         /// <summary>
         /// The UserID for this user
