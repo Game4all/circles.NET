@@ -146,17 +146,7 @@ namespace circles.NET
         /// <param name="mode"></param>
         /// <returns></returns>
         public async Task<APIReplay> GetReplayAsync(string username, long beatmapId, Gamemode mode)
-        {
-            try
-            {
-                var replay = await Client.GetFromJSON<APIReplay>(CreateURL("get_replay", "k", APIKey, "u", username, "b", beatmapId, "m", (int)mode));
-                return replay;
-            }
-            catch (Exception e)
-            {
-                throw e.InnerException;
-            }
-        }
+            => await Client.GetFromJSON<APIReplay>(CreateURL("get_replay", "k", APIKey, "u", username, "b", beatmapId, "m", (int)mode));
 
         /// <summary>
         /// Gets data about a multiplayer room asynchronously
@@ -164,7 +154,7 @@ namespace circles.NET
         /// <param name="roomId">The Room Id</param>
         /// <returns></returns>
         public async Task<APIMultiplayerRoom> GetMultiplayerRoomsAsync(long roomId)
-        => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_room", "k", APIKey, "mp", roomId));
+            => await Client.GetFromJSON<APIMultiplayerRoom>(CreateURL("get_room", "k", APIKey, "mp", roomId));
 
         /// <summary>
         /// Performs a custom request against the given end_point with custom queryStrings
