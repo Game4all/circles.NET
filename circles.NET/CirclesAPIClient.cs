@@ -20,7 +20,7 @@ namespace circles.NET
 
         private CirclesAPIClient()
         {
-            Client = new CirclesHttpClient(this);
+            Client = new CirclesHttpClient();
         }
 
         /// <summary>

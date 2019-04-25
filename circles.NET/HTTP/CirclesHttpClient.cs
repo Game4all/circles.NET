@@ -12,13 +12,10 @@ namespace circles.NET.HTTP
     /// </summary>
     public sealed class CirclesHttpClient : HttpClient
     {
-        private CirclesAPIClient apiClient;
-
         public TraceListener DebugTrace { get; set; }
 
-        internal CirclesHttpClient(CirclesAPIClient cli)
+        internal CirclesHttpClient()
         {
-            apiClient = cli;
         }
 
         public async Task<T> GetFromJSON<T>(string url)
@@ -33,12 +30,11 @@ namespace circles.NET.HTTP
             DebugTrace?.WriteLine($"Request at {url} was sucessful");
 
             var content = await request.Content.ReadAsStringAsync();
-
             try
             {
                 return JsonConvert.DeserializeObject<T>(content);
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
                 throw;
             }
