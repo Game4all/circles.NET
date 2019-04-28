@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Reflection;
+using System.Linq;
+using System.Text;
 
 namespace circles.NET.Enums
 {
@@ -75,10 +77,68 @@ namespace circles.NET.Enums
     public static class ModsEnumExtensions
     {
         /// <summary>
-        /// Gets a short string representation of the given gamemode
+        /// Gets a short string representation of the given <see cref="Mods"/> bitflag / value
         /// </summary>
         /// <param name="mod"></param>
         /// <returns></returns>
-        public static string ToShortString(this Mods mod) => mod.GetType().GetProperty(mod.ToString()).GetCustomAttribute<DescriptionAttribute>().Description.ToString().ToUpper();
+        public static string ToShortString(this Mods mod)
+        {
+            var sb = new StringBuilder();
+            var mods = mod.GetFromBitflag();
+            var type = typeof(Mods);
+
+            foreach (var item in mods)
+            {
+                var memInfo = type.GetMember(item.ToString());
+                var attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                sb.Append(((DescriptionAttribute)attributes[0]).Description);
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Gets a short string representation of the given <see cref="IEnumerable{Mods}"/> of <see cref="Mods"/>
+        /// </summary>
+        /// <param name="mod"></param>
+        /// <returns></returns>
+        public static string ToShortString(this IEnumerable<Mods> mods)
+        {
+            var sb = new StringBuilder();
+            foreach (var item in mods)
+                sb.Append(item.ToShortString());
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Converts a bitflag representation into an array of <see cref="Mods"/>
+        /// </summary>
+        /// <param name="flags"></param>
+        /// <returns></returns>
+        public static Mods[] GetFromBitflag(this Mods flags) //adapted code from SO answer https://stackoverflow.com/questions/4171140/iterate-over-values-in-flags-enum
+        {
+            ulong flag = 1;
+            var mods = new List<Mods>();
+            foreach (var value in Enum.GetValues(flags.GetType()).Cast<Mods>())
+            {
+                ulong bits = Convert.ToUInt64(value);
+                while (flag < bits)
+                {
+                    flag <<= 1;
+                }
+
+                if (flag == bits && flags.HasFlag(value))
+                {
+                    mods.Add(value);
+                }
+            }
+
+            if (mods.Contains(Mods.DoubleTime) && mods.Contains(Mods.Nightcore)) //if DTNC is parsed, only return NC
+            {
+                mods.RemoveAll((s) => s == Mods.DoubleTime || s == Mods.Nightcore);
+                mods.Add(Mods.Nightcore);
+            }
+
+            return mods.ToArray();
+        }
     }
 }
