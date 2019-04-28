@@ -48,9 +48,9 @@ namespace circles.NET.Enums
         Key7 = 262144,
         [Description("8K")]
         Key8 = 524288,
-        [Description("FadeIn")]
+        [Description("FI")]
         FadeIn = 1048576,
-        [Description("RN")]
+        [Description("RD")]
         Random = 2097152,
         [Description("CN")]
         Cinema = 4194304,
@@ -58,7 +58,7 @@ namespace circles.NET.Enums
         Target = 8388608,
         [Description("9K")]
         Key9 = 16777216,
-        [Description("CP")]
+        [Description("CO")]
         KeyCoop = 33554432,
         [Description("1K")]
         Key1 = 67108864,
