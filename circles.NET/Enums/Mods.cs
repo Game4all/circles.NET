@@ -140,5 +140,18 @@ namespace circles.NET.Enums
 
             return mods.ToArray();
         }
+
+        /// <summary>
+        /// Converts an <see cref="IEnumerable{Mods}"/> to a <see cref="Mods"/> bitflag representation
+        /// </summary>
+        /// <param name="mods"></param>
+        /// <returns></returns>
+        public static Mods ToBitflag(this IEnumerable<Mods> mods)
+        {
+            var value = Mods.None;
+            foreach (var item in mods)
+                value |= item;
+            return value;
+        }
     }
 }
