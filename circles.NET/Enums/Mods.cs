@@ -138,6 +138,12 @@ namespace circles.NET.Enums
                 mods.Add(Mods.Nightcore);
             }
 
+            if (mods.Contains(Mods.Perfect) && mods.Contains(Mods.SuddenDeath))//if PFSD is parsed, only return PF
+            {
+                mods.RemoveAll((s) => s == Mods.Perfect || s == Mods.SuddenDeath);
+                mods.Add(Mods.Perfect);
+            }
+
             return mods.ToArray();
         }
 
