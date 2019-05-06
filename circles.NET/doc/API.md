@@ -1,7 +1,7 @@
 <a name='assembly'></a>
 # circles.NET
 
-## Types
+## Contents
 
 - [APIBeatmap](#T-circles-NET-Models-APIBeatmap 'circles.NET.Models.APIBeatmap')
 - [APIMultiplayerGame](#T-circles-NET-Models-APIMultiplayerGame 'circles.NET.Models.APIMultiplayerGame')
@@ -21,7 +21,7 @@
   - [GetBeatmapsByIdAsync(beatmap_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByIdAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByIdAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetBeatmapsByMapsetAsync(mapset_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByMapsetAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByMapsetAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetMultiplayerRoomsAsync(roomId)](#M-circles-NET-CirclesAPIClient-GetMultiplayerRoomsAsync-System-Int64- 'circles.NET.CirclesAPIClient.GetMultiplayerRoomsAsync(System.Int64)')
-  - [GetRawAsync\<T>\(endPoint,queryStrings)](#M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]- 'circles.NET.CirclesAPIClient.GetRawAsync``1(System.String,System.Object[])')
+  - [GetRawAsync\`\`1(endPoint,queryStrings)](#M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]- 'circles.NET.CirclesAPIClient.GetRawAsync``1(System.String,System.Object[])')
   - [GetReplayAsync(username,beatmapId,mode)](#M-circles-NET-CirclesAPIClient-GetReplayAsync-System-String,System-Int64,circles-NET-Enums-Gamemode- 'circles.NET.CirclesAPIClient.GetReplayAsync(System.String,System.Int64,circles.NET.Enums.Gamemode)')
   - [GetScoresAsync(beatmapId,username,mode,mods,limit)](#M-circles-NET-CirclesAPIClient-GetScoresAsync-System-Int64,System-String,circles-NET-Enums-Gamemode,System-Nullable{circles-NET-Enums-Mods},System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetScoresAsync(System.Int64,System.String,circles.NET.Enums.Gamemode,System.Nullable{circles.NET.Enums.Mods},System.Nullable{System.Int32})')
   - [GetUserBestAsync(username,mode,limit)](#M-circles-NET-CirclesAPIClient-GetUserBestAsync-System-String,circles-NET-Enums-Gamemode,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetUserBestAsync(System.String,circles.NET.Enums.Gamemode,System.Nullable{System.Int32})')
@@ -29,6 +29,11 @@
   - [GetUsersAsync(name,mode)](#M-circles-NET-CirclesAPIClient-GetUsersAsync-System-String,circles-NET-Enums-Gamemode- 'circles.NET.CirclesAPIClient.GetUsersAsync(System.String,circles.NET.Enums.Gamemode)')
   - [GetUsersAsync(name,mode)](#M-circles-NET-CirclesAPIClient-GetUsersAsync-System-Int32,circles-NET-Enums-Gamemode- 'circles.NET.CirclesAPIClient.GetUsersAsync(System.Int32,circles.NET.Enums.Gamemode)')
 - [CirclesHttpClient](#T-circles-NET-HTTP-CirclesHttpClient 'circles.NET.HTTP.CirclesHttpClient')
+- [ModsEnumExtensions](#T-circles-NET-Enums-ModsEnumExtensions 'circles.NET.Enums.ModsEnumExtensions')
+  - [GetFromBitflag(flags)](#M-circles-NET-Enums-ModsEnumExtensions-GetFromBitflag-circles-NET-Enums-Mods- 'circles.NET.Enums.ModsEnumExtensions.GetFromBitflag(circles.NET.Enums.Mods)')
+  - [ToBitflag(mods)](#M-circles-NET-Enums-ModsEnumExtensions-ToBitflag-System-Collections-Generic-IEnumerable{circles-NET-Enums-Mods}- 'circles.NET.Enums.ModsEnumExtensions.ToBitflag(System.Collections.Generic.IEnumerable{circles.NET.Enums.Mods})')
+  - [ToShortString(mod)](#M-circles-NET-Enums-ModsEnumExtensions-ToShortString-circles-NET-Enums-Mods- 'circles.NET.Enums.ModsEnumExtensions.ToShortString(circles.NET.Enums.Mods)')
+  - [ToShortString(mod)](#M-circles-NET-Enums-ModsEnumExtensions-ToShortString-System-Collections-Generic-IEnumerable{circles-NET-Enums-Mods}- 'circles.NET.Enums.ModsEnumExtensions.ToShortString(System.Collections.Generic.IEnumerable{circles.NET.Enums.Mods})')
 
 <a name='T-circles-NET-Models-APIBeatmap'></a>
 ## APIBeatmap `type`
@@ -986,7 +991,7 @@ Gets data about a multiplayer room asynchronously
 | roomId | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The Room Id |
 
 <a name='M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]-'></a>
-### GetRawAsync\<T>\(endPoint,queryStrings) `method`
+### GetRawAsync\`\`1(endPoint,queryStrings) `method`
 
 ##### Summary
 
@@ -1133,3 +1138,78 @@ circles.NET.HTTP
 A [HttpClient](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpClient 'System.Net.Http.HttpClient') with methods for deserializing directly API requests content into usable objects
 
 Intended to be only used by [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient')
+
+<a name='T-circles-NET-Enums-ModsEnumExtensions'></a>
+## ModsEnumExtensions `type`
+
+##### Namespace
+
+circles.NET.Enums
+
+<a name='M-circles-NET-Enums-ModsEnumExtensions-GetFromBitflag-circles-NET-Enums-Mods-'></a>
+### GetFromBitflag(flags) `method`
+
+##### Summary
+
+Converts a bitflag representation into an array of [Mods](#T-circles-NET-Enums-Mods 'circles.NET.Enums.Mods')
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| flags | [circles.NET.Enums.Mods](#T-circles-NET-Enums-Mods 'circles.NET.Enums.Mods') |  |
+
+<a name='M-circles-NET-Enums-ModsEnumExtensions-ToBitflag-System-Collections-Generic-IEnumerable{circles-NET-Enums-Mods}-'></a>
+### ToBitflag(mods) `method`
+
+##### Summary
+
+Converts an [IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') to a [Mods](#T-circles-NET-Enums-Mods 'circles.NET.Enums.Mods') bitflag representation
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| mods | [System.Collections.Generic.IEnumerable{circles.NET.Enums.Mods}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{circles.NET.Enums.Mods}') |  |
+
+<a name='M-circles-NET-Enums-ModsEnumExtensions-ToShortString-circles-NET-Enums-Mods-'></a>
+### ToShortString(mod) `method`
+
+##### Summary
+
+Gets a short string representation of the given [Mods](#T-circles-NET-Enums-Mods 'circles.NET.Enums.Mods') bitflag / value
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| mod | [circles.NET.Enums.Mods](#T-circles-NET-Enums-Mods 'circles.NET.Enums.Mods') |  |
+
+<a name='M-circles-NET-Enums-ModsEnumExtensions-ToShortString-System-Collections-Generic-IEnumerable{circles-NET-Enums-Mods}-'></a>
+### ToShortString(mod) `method`
+
+##### Summary
+
+Gets a short string representation of the given [IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') of [Mods](#T-circles-NET-Enums-Mods 'circles.NET.Enums.Mods')
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| mod | [System.Collections.Generic.IEnumerable{circles.NET.Enums.Mods}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{circles.NET.Enums.Mods}') |  |
