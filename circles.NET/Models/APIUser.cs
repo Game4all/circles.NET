@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using circles.NET.Converters;
+using Newtonsoft.Json;
+using System;
 
 namespace circles.NET.Models
 {
@@ -86,10 +88,22 @@ namespace circles.NET.Models
         public long CountRankSS { get; private set; }
 
         /// <summary>
+        /// Total number of SSes with HD enabled (=> XH)
+        /// </summary>
+        [JsonProperty(PropertyName = "count_rank_ssh")]
+        public long CountRankXH { get; private set; }
+
+        /// <summary>
         /// Total number of Ses
         /// </summary>
         [JsonProperty(PropertyName = "count_rank_s")]
         public long CountRankS { get; private set; }
+
+        /// <summary>
+        /// Total number of Ses with HD enabled (=> SH)
+        /// </summary>
+        [JsonProperty(PropertyName = "count_rank_sh")]
+        public long CountRankSH { get; private set; }
 
         /// <summary>
         /// Total number of As
@@ -109,6 +123,17 @@ namespace circles.NET.Models
         [JsonProperty(PropertyName = "pp_country_rank")]
         public int PpCountryRank { get; private set; }
 
-        //public List<Event> events { get; set; }
+        /// <summary>
+        /// The date on which the user joined us :)
+        /// </summary>
+        [JsonProperty(PropertyName = "join_date")]
+        public DateTime JoinDate { get; private set; }
+
+        /// <summary>
+        /// The total time played
+        /// </summary>
+        [JsonProperty(PropertyName = "total_seconds_played")]
+        [JsonConverter(typeof(TimespanConverter))]
+        public TimeSpan TimePlayed { get; private set; }
     }
 }
