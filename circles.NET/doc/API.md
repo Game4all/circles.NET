@@ -21,7 +21,7 @@
   - [GetBeatmapsByIdAsync(beatmap_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByIdAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByIdAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetBeatmapsByMapsetAsync(mapset_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByMapsetAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByMapsetAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetMultiplayerRoomsAsync(roomId)](#M-circles-NET-CirclesAPIClient-GetMultiplayerRoomsAsync-System-Int64- 'circles.NET.CirclesAPIClient.GetMultiplayerRoomsAsync(System.Int64)')
-  - [GetRawAsync\`\`1(endPoint,queryStrings)](#M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]- 'circles.NET.CirclesAPIClient.GetRawAsync``1(System.String,System.Object[])')
+  - [GetRawAsync\<T>(endPoint,queryStrings)](#M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]- 'circles.NET.CirclesAPIClient.GetRawAsync``1(System.String,System.Object[])')
   - [GetReplayAsync(username,beatmapId,mode)](#M-circles-NET-CirclesAPIClient-GetReplayAsync-System-String,System-Int64,circles-NET-Enums-Gamemode- 'circles.NET.CirclesAPIClient.GetReplayAsync(System.String,System.Int64,circles.NET.Enums.Gamemode)')
   - [GetScoresAsync(beatmapId,username,mode,mods,limit)](#M-circles-NET-CirclesAPIClient-GetScoresAsync-System-Int64,System-String,circles-NET-Enums-Gamemode,System-Nullable{circles-NET-Enums-Mods},System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetScoresAsync(System.Int64,System.String,circles.NET.Enums.Gamemode,System.Nullable{circles.NET.Enums.Mods},System.Nullable{System.Int32})')
   - [GetUserBestAsync(username,mode,limit)](#M-circles-NET-CirclesAPIClient-GetUserBestAsync-System-String,circles-NET-Enums-Gamemode,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetUserBestAsync(System.String,circles.NET.Enums.Gamemode,System.Nullable{System.Int32})')
@@ -546,6 +546,13 @@ Total number of As
 
 Total number of Ses
 
+<a name='P-circles-NET-Models-APIUser-CountRankSH'></a>
+### CountRankSH `property`
+
+##### Summary
+
+Total number of Ses with HD enabled (=> SH)
+
 <a name='P-circles-NET-Models-APIUser-CountRankSS'></a>
 ### CountRankSS `property`
 
@@ -553,12 +560,26 @@ Total number of Ses
 
 Total number of SSes
 
+<a name='P-circles-NET-Models-APIUser-CountRankXH'></a>
+### CountRankXH `property`
+
+##### Summary
+
+Total number of SSes with HD enabled (=> XH)
+
 <a name='P-circles-NET-Models-APIUser-Country'></a>
 ### Country `property`
 
 ##### Summary
 
 Player's country code
+
+<a name='P-circles-NET-Models-APIUser-JoinDate'></a>
+### JoinDate `property`
+
+##### Summary
+
+The date on which the user joined us :)
 
 <a name='P-circles-NET-Models-APIUser-Level'></a>
 ### Level `property`
@@ -601,6 +622,13 @@ Raw PP of this player
 ##### Summary
 
 Total ranked score
+
+<a name='P-circles-NET-Models-APIUser-TimePlayed'></a>
+### TimePlayed `property`
+
+##### Summary
+
+The total time played
 
 <a name='P-circles-NET-Models-APIUser-TotalScore'></a>
 ### TotalScore `property`
@@ -991,7 +1019,7 @@ Gets data about a multiplayer room asynchronously
 | roomId | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The Room Id |
 
 <a name='M-circles-NET-CirclesAPIClient-GetRawAsync``1-System-String,System-Object[]-'></a>
-### GetRawAsync\`\`1(endPoint,queryStrings) `method`
+### GetRawAsync\<T>(endPoint,queryStrings) `method`
 
 ##### Summary
 
