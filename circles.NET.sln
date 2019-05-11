@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circles.NET", "circles.NET\circles.NET.csproj", "{DFCAF4D2-2F09-4D75-A04D-A754D463DA47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "circles.NET", "circles.NET\circles.NET.csproj", "{DFCAF4D2-2F09-4D75-A04D-A754D463DA47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circles.NET.SampleApplication", "circles.NET.SampleApplication\circles.NET.SampleApplication.csproj", "{F49A74EB-9A26-4851-8C34-F48D432F5035}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DFCAF4D2-2F09-4D75-A04D-A754D463DA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFCAF4D2-2F09-4D75-A04D-A754D463DA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFCAF4D2-2F09-4D75-A04D-A754D463DA47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
