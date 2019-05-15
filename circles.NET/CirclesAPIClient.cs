@@ -80,7 +80,7 @@ namespace circles.NET
         /// <param name="limit">A limit of results to return (returns first 500 results by default)</param>
         /// <returns></returns>
         public async Task<APIScore[]> GetScoresAsync(long beatmapId, string username = null, Gamemode mode = Gamemode.Standard, Mods? mods = null, int? limit = null)
-            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "mode", (int)mode, "mods", (int?)mods, "limit", limit));
+            => await Client.GetFromJSON<APIScore[]>(CreateURL("get_scores", "k", APIKey, "b", beatmapId, "u", username, "m", (int)mode, "mods", (int?)mods, "limit", limit));
 
         //GetUserBestAsync overloads
 
@@ -92,7 +92,7 @@ namespace circles.NET
         /// <param name="limit">A limit of results to return (returns first 500 results by default)</param>
         /// <returns></returns>
         public async Task<APIUserBest[]> GetUserBestAsync(string username, Gamemode mode = Gamemode.Standard, int? limit = null)
-            => await Client.GetFromJSON<APIUserBest[]>(CreateURL("get_user_best", "k", APIKey, "u", username, "mode", (int)mode, "limit", limit));
+            => await Client.GetFromJSON<APIUserBest[]>(CreateURL("get_user_best", "k", APIKey, "u", username, "m", (int)mode, "limit", limit));
 
         //GetUserRecent overloads
 
@@ -104,7 +104,7 @@ namespace circles.NET
         /// <param name="limit">A limit of results to return (returns first 500 results by default)</param>
         /// <returns></returns>
         public async Task<APIUserRecent[]> GetUserRecentAsync(string username, Gamemode mode = Gamemode.Standard, int? limit = null)
-            => await Client.GetFromJSON<APIUserRecent[]>(CreateURL("get_user_recent", "k", APIKey, "u", username, "mode", (int)mode, "limit", limit));
+            => await Client.GetFromJSON<APIUserRecent[]>(CreateURL("get_user_recent", "k", APIKey, "u", username, "m", (int)mode, "limit", limit));
 
         //GetBeatmapsAsync overloads
 
