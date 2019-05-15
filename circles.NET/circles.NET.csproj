@@ -10,7 +10,10 @@ Please note this library is ASYNCHRONOUS only</Description>
     <RepositoryUrl>https://github.com/Game4all/circles.NET</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>osu! api C# NetStandard osugame async asynchronous</PackageTags>
-    <PackageReleaseNotes>***1.1.1***
+    <PackageReleaseNotes>***1.1.2***
+- **Fixed** wrong query string used in CirclesAPIClient preventing getting data from a user with a gamemode different of standard
+
+***1.1.1***
 - **Added** some missings properties to APIUser
 
 ***1.1.0***
@@ -19,7 +22,7 @@ Please note this library is ASYNCHRONOUS only</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://tldrlegal.com/license/unlicense</PackageLicenseUrl>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
