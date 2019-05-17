@@ -2,9 +2,8 @@
 <h1><code>circles.NET</code></h1>
 An asynchronous <b>.NET Standard wrapper</b> for the <b>osu! api</b>
 <br/>
-<img alt="Nuget" src="https://img.shields.io/nuget/dt/circles.NET.svg?color=lightblue&label=Downloads&logo=nuget&logoColor=lightblue"/>
+<img alt="Nuget" src="https://img.shields.io/nuget/dt/circles.NET.svg?color=lightblue&label=Downloads&logo=nuget&logoColor=lightblue&link=https://www.nuget.org/packages/circles.NET/"/>
 </div>
-
 
 
 ## Get Started
