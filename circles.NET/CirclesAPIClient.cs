@@ -3,6 +3,7 @@ using circles.NET.Exceptions;
 using circles.NET.HTTP;
 using circles.NET.Models;
 using System;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,19 @@ namespace circles.NET
             : this()
         {
             APIKey = apiKey;
+        }
+
+        /// <summary>
+        /// Constructs an instance of <see cref="CirclesAPIClient"/> with the API key given as parameter and using the given <see cref="HttpMessageHandler"/> for handling http requests.
+        /// Use this ctor if you need to implement request caching.
+        /// </summary>
+        /// <param name="apiKey"></param>
+        /// <param name="handler">The <see cref="HttpMessageHandler"/> to use for this <see cref="CirclesAPIClient"/></param>
+        /// <param name="DisposeHandler">Bool indicating if the attached <see cref="HttpMessageHandler"/> should be disposed on <see cref="CirclesAPIClient"/> disposal</param>
+        public CirclesAPIClient(string apiKey, HttpMessageHandler handler, bool DisposeHandler = true)
+        {
+            APIKey = apiKey;
+            Client = new CirclesHttpClient(handler, true);
         }
 
         /// <summary>

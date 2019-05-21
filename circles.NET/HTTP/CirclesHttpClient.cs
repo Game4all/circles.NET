@@ -18,6 +18,11 @@ namespace circles.NET.HTTP
         {
         }
 
+        internal CirclesHttpClient(HttpMessageHandler handler, bool disposeHandler) 
+            : base(handler, disposeHandler)
+        {
+        }
+
         public async Task<T> GetFromJSON<T>(string url)
         {
             DebugTrace?.WriteLine($"Requesting url: {url}");
