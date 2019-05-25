@@ -84,6 +84,12 @@ namespace circles.NET.Models
         public Gamemode Gamemode { get; private set; }
 
         /// <summary>
+        /// The date this beatmap was submitted
+        /// </summary>
+        [JsonProperty(PropertyName = "submit_date")]
+        public DateTime? SubmissionDate { get; private set; }
+
+        /// <summary>
         /// The date this beatmap was approved
         /// </summary>
         [JsonProperty(PropertyName = "approved_date")]
@@ -112,6 +118,12 @@ namespace circles.NET.Models
         /// </summary>
         [JsonProperty(PropertyName = "creator")]
         public string Creator { get; private set; }
+
+        /// <summary>
+        /// The rating for this map
+        /// </summary>
+        [JsonProperty(PropertyName = "rating")]
+        public float Rating { get; private set; }
 
         /// <summary>
         /// BPM of the beatmap
@@ -172,5 +184,17 @@ namespace circles.NET.Models
         /// </summary>
         [JsonProperty(PropertyName = "difficultyrating")]
         public float StarRating { get; private set; }
+
+        /// <summary>
+        /// The difficulty star rating for raw aim
+        /// </summary>
+        [JsonProperty(PropertyName = "diff_aim")]
+        public float? AimRating { get; private set; }
+
+        /// <summary>
+        /// The difficulty star rating for raw speed
+        /// </summary>
+        [JsonProperty(PropertyName = "diff_speed")]
+        public float? SpeedRating { get; private set; }
     }
 }
