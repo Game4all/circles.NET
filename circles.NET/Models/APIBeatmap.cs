@@ -30,6 +30,20 @@ namespace circles.NET.Models
         public ApprovedStatus ApprovedStatus { get; private set; }
 
         /// <summary>
+        /// The genre of this beatmap (set)
+        /// </summary>
+        [JsonProperty(PropertyName = "genre_id")]
+        [JsonConverter(typeof(EnumConverter<Genre>))]
+        public Genre Genre { get; private set; }
+
+        /// <summary>
+        /// The language of this beatmap (set)
+        /// </summary>
+        [JsonProperty(PropertyName = "language_id")]
+        [JsonConverter(typeof(EnumConverter<Language>))]
+        public Language Language { get; private set; }
+
+        /// <summary>
         /// The total length (in seconds) of this beatmap
         /// </summary>
         [JsonProperty(PropertyName = "total_length")]
@@ -145,18 +159,6 @@ namespace circles.NET.Models
         public string Tags { get; private set; }
 
         /// <summary>
-        /// Genre of the beatmap
-        /// </summary>
-        [JsonProperty(PropertyName = "genre_id")]
-        public string Genre { get; private set; }
-
-        /// <summary>
-        /// Language of the beatmap
-        /// </summary>
-        [JsonProperty(PropertyName = "language_id")]
-        public string Language { get; private set; }
-
-        /// <summary>
         /// Number of times this beatmap has been favourited
         /// </summary>
         [JsonProperty(PropertyName = "favourite_count")]
@@ -197,5 +199,35 @@ namespace circles.NET.Models
         /// </summary>
         [JsonProperty(PropertyName = "diff_speed")]
         public float? SpeedRating { get; private set; }
+
+        /// <summary>
+        /// The number of "normal" hitobjects in this beatmap.
+        /// </summary>
+        [JsonProperty(PropertyName = "count_normal")]
+        public int NormalObjectCount { get; private set; }
+
+        /// <summary>
+        /// The number of "slider" hitobjects in this beatmap.
+        /// </summary>
+        [JsonProperty(PropertyName = "count_slider")]
+        public int SliderObjectCount { get; private set; }
+
+        /// <summary>
+        /// The number of "spinner" hitobjects in this beatmap.
+        /// </summary>
+        [JsonProperty(PropertyName = "count_spinner")]
+        public int SpinnerObjectCount { get; private set; }
+
+        /// <summary>
+        /// An bool indicating whether the audio for this beatmap set is unavalaible (DMCA takedown ?)
+        /// </summary>
+        [JsonProperty(PropertyName = "audio_unavailable")]
+        public bool AudioUnavalaible { get; private set; }
+
+        /// <summary>
+        /// An bool indicating whether the download for this beatmap (set) is unavalaible (DMCA takedown ?)
+        /// </summary>
+        [JsonProperty(PropertyName = "download_unavailable")]
+        public bool DownloadUnavalaible { get; private set; }
     }
 }
