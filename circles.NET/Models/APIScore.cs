@@ -107,5 +107,11 @@ namespace circles.NET.Models
         /// </summary>
         [JsonProperty(PropertyName = "pp")]
         public float Pp { get; private set; }
+
+        /// <summary>
+        /// A bool indicating whether the replay for this score is avalaible for download.
+        /// </summary>
+        [JsonProperty(PropertyName = "replay_avalaible")]
+        public bool ReplayAvalaible { get; private set; }
     }
 }
