@@ -26,7 +26,7 @@ namespace circles.NET.Models
         /// The <see cref="ApprovedStatus"/> of this beatmap
         /// </summary>
         [JsonProperty(PropertyName = "approved")]
-        [JsonConverter(typeof(ApprovedStatusConverter))]
+        [JsonConverter(typeof(EnumConverter<ApprovedStatus>))]
         public ApprovedStatus ApprovedStatus { get; private set; }
 
         /// <summary>
@@ -81,6 +81,7 @@ namespace circles.NET.Models
         /// The gamemode of this beatmap
         /// </summary>
         [JsonProperty(PropertyName = "mode")]
+        [JsonConverter(typeof(EnumConverter<Gamemode>))]
         public Gamemode Gamemode { get; private set; }
 
         /// <summary>
