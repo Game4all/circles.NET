@@ -23,6 +23,12 @@ namespace circles.NET.Models
         public long Score { get; private set; }
 
         /// <summary>
+        /// The ID of this score
+        /// </summary>
+        [JsonProperty(PropertyName = "score_id")]
+        public long ID { get; private set; }
+
+        /// <summary>
         /// Max combo achieved in this score
         /// </summary>
         [JsonProperty(PropertyName = "maxcombo")]
