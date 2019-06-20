@@ -14,10 +14,7 @@
 - [APIUserRecent](#T-circles-NET-Models-APIUserRecent 'circles.NET.Models.APIUserRecent')
 - [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient')
   - [Constructor(apiKey)](#M-circles-NET-CirclesAPIClient-#ctor-System-String- 'circles.NET.CirclesAPIClient.#ctor(System.String)')
-  - [APIKey](#P-circles-NET-CirclesAPIClient-APIKey 'circles.NET.CirclesAPIClient.APIKey')
-  - [BaseEndpoint](#P-circles-NET-CirclesAPIClient-BaseEndpoint 'circles.NET.CirclesAPIClient.BaseEndpoint')
-  - [Client](#P-circles-NET-CirclesAPIClient-Client 'circles.NET.CirclesAPIClient.Client')
-  - [CreateURL(endpoint,queryStrings)](#M-circles-NET-CirclesAPIClient-CreateURL-System-String,System-Object[]- 'circles.NET.CirclesAPIClient.CreateURL(System.String,System.Object[])')
+  - [Constructor(apiKey,handler,DisposeHandler)](#M-circles-NET-CirclesAPIClient-#ctor-System-String,System-Net-Http-HttpMessageHandler,System-Boolean- 'circles.NET.CirclesAPIClient.#ctor(System.String,System.Net.Http.HttpMessageHandler,System.Boolean)')
   - [GetBeatmapsByIdAsync(beatmap_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByIdAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByIdAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetBeatmapsByMapsetAsync(mapset_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByMapsetAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByMapsetAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetMultiplayerRoomsAsync(roomId)](#M-circles-NET-CirclesAPIClient-GetMultiplayerRoomsAsync-System-Int64- 'circles.NET.CirclesAPIClient.GetMultiplayerRoomsAsync(System.Int64)')
@@ -53,6 +50,13 @@ A class representing an osu! beatmap returned by API
 
 Approach Rate
 
+<a name='P-circles-NET-Models-APIBeatmap-AimRating'></a>
+### AimRating `property`
+
+##### Summary
+
+The difficulty star rating for raw aim
+
 <a name='P-circles-NET-Models-APIBeatmap-ApprovedDate'></a>
 ### ApprovedDate `property`
 
@@ -73,6 +77,13 @@ The [ApprovedStatus](#P-circles-NET-Models-APIBeatmap-ApprovedStatus 'circles.NE
 ##### Summary
 
 Compositor of the beatmap's music
+
+<a name='P-circles-NET-Models-APIBeatmap-AudioUnavalaible'></a>
+### AudioUnavalaible `property`
+
+##### Summary
+
+An bool indicating whether the audio for this beatmap set is unavalaible (DMCA takedown ?)
 
 <a name='P-circles-NET-Models-APIBeatmap-BeatmapId'></a>
 ### BeatmapId `property`
@@ -109,6 +120,13 @@ Creator of the beatmap
 
 The name of this beatmap's difficulty
 
+<a name='P-circles-NET-Models-APIBeatmap-DownloadUnavalaible'></a>
+### DownloadUnavalaible `property`
+
+##### Summary
+
+An bool indicating whether the download for this beatmap (set) is unavalaible (DMCA takedown ?)
+
 <a name='P-circles-NET-Models-APIBeatmap-FavouriteCount'></a>
 ### FavouriteCount `property`
 
@@ -128,7 +146,7 @@ The gamemode of this beatmap
 
 ##### Summary
 
-Genre of the beatmap
+The genre of this beatmap (set)
 
 <a name='P-circles-NET-Models-APIBeatmap-HP'></a>
 ### HP `property`
@@ -142,7 +160,7 @@ HP Drain
 
 ##### Summary
 
-Language of the beatmap
+The language of this beatmap (set)
 
 <a name='P-circles-NET-Models-APIBeatmap-LastUpdate'></a>
 ### LastUpdate `property`
@@ -172,6 +190,13 @@ The ID of the mapset this beatmap belongs to
 
 The max achievable combo on this map
 
+<a name='P-circles-NET-Models-APIBeatmap-NormalObjectCount'></a>
+### NormalObjectCount `property`
+
+##### Summary
+
+The number of "normal" hitobjects in this beatmap.
+
 <a name='P-circles-NET-Models-APIBeatmap-OD'></a>
 ### OD `property`
 
@@ -200,6 +225,20 @@ The playable length (in seconds) of this beatmap
 
 Number of times this beamap has been played
 
+<a name='P-circles-NET-Models-APIBeatmap-Rating'></a>
+### Rating `property`
+
+##### Summary
+
+The rating for this map
+
+<a name='P-circles-NET-Models-APIBeatmap-SliderObjectCount'></a>
+### SliderObjectCount `property`
+
+##### Summary
+
+The number of "slider" hitobjects in this beatmap.
+
 <a name='P-circles-NET-Models-APIBeatmap-Source'></a>
 ### Source `property`
 
@@ -207,12 +246,33 @@ Number of times this beamap has been played
 
 Source of the beatmap's music
 
+<a name='P-circles-NET-Models-APIBeatmap-SpeedRating'></a>
+### SpeedRating `property`
+
+##### Summary
+
+The difficulty star rating for raw speed
+
+<a name='P-circles-NET-Models-APIBeatmap-SpinnerObjectCount'></a>
+### SpinnerObjectCount `property`
+
+##### Summary
+
+The number of "spinner" hitobjects in this beatmap.
+
 <a name='P-circles-NET-Models-APIBeatmap-StarRating'></a>
 ### StarRating `property`
 
 ##### Summary
 
 The difficulty star rating of this beatmap
+
+<a name='P-circles-NET-Models-APIBeatmap-SubmissionDate'></a>
+### SubmissionDate `property`
+
+##### Summary
+
+The date this beatmap was submitted
 
 <a name='P-circles-NET-Models-APIBeatmap-Tags'></a>
 ### Tags `property`
@@ -472,6 +532,13 @@ The pp awarded for this score
 
 The grade achieved on this score
 
+<a name='P-circles-NET-Models-APIScore-ReplayAvalaible'></a>
+### ReplayAvalaible `property`
+
+##### Summary
+
+A bool indicating whether the replay for this score is avalaible for download.
+
 <a name='P-circles-NET-Models-APIScore-Score'></a>
 ### Score `property`
 
@@ -718,6 +785,13 @@ Number of missed hits
 
 The date on which this score was achieved
 
+<a name='P-circles-NET-Models-APIUserBest-ID'></a>
+### ID `property`
+
+##### Summary
+
+The ID of this score
+
 <a name='P-circles-NET-Models-APIUserBest-MaxCombo'></a>
 ### MaxCombo `property`
 
@@ -902,7 +976,7 @@ circles.NET
 An asynchronous client wrapper class for the osu! api v1
 
 <a name='M-circles-NET-CirclesAPIClient-#ctor-System-String-'></a>
-### Constructor(apiKey) `constructor`
+### #ctor(apiKey) `constructor`
 
 ##### Summary
 
@@ -913,6 +987,22 @@ Constructs an instance of [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'ci
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | apiKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='M-circles-NET-CirclesAPIClient-#ctor-System-String,System-Net-Http-HttpMessageHandler,System-Boolean-'></a>
+### #ctor(apiKey,handler,DisposeHandler) `constructor`
+
+##### Summary
+
+Constructs an instance of [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient') with the API key given as parameter and using the given [HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') for handling http requests.
+Use this ctor if you need to implement request caching.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| apiKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+| handler | [System.Net.Http.HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') | The [HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') to use for this [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient') |
+| DisposeHandler | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | Bool indicating if the attached [HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') should be disposed on [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient') disposal |
 
 <a name='P-circles-NET-CirclesAPIClient-APIKey'></a>
 ### APIKey `property`
