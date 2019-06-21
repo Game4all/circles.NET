@@ -25,6 +25,7 @@ Please note this library is ASYNCHRONOUS only</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://tldrlegal.com/license/unlicense</PackageLicenseUrl>
     <Version>1.1.3</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
