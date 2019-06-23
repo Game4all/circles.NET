@@ -222,12 +222,14 @@ namespace circles.NET.Models
         /// An bool indicating whether the audio for this beatmap set is unavalaible (DMCA takedown ?)
         /// </summary>
         [JsonProperty(PropertyName = "audio_unavailable")]
+        [JsonConverter(typeof(StringBoolConverter))]
         public bool AudioUnavalaible { get; private set; }
 
         /// <summary>
         /// An bool indicating whether the download for this beatmap (set) is unavalaible (DMCA takedown ?)
         /// </summary>
         [JsonProperty(PropertyName = "download_unavailable")]
+        [JsonConverter(typeof(StringBoolConverter))]
         public bool DownloadUnavalaible { get; private set; }
     }
 }
