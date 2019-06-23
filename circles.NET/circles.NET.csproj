@@ -24,7 +24,7 @@ Please note this library is ASYNCHRONOUS only</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://tldrlegal.com/license/unlicense</PackageLicenseUrl>
-    <Version>1.1.4</Version>
+    <Version>1.1.5</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
