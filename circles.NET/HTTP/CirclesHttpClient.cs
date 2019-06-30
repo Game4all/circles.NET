@@ -23,12 +23,12 @@ namespace circles.NET.HTTP
         {
         }
 
-        public async Task<T> GetFromJSON<T>(string url)
+        public async Task<T> GetFromJSON<T>(string route)
         {
-            DebugTrace?.WriteLine($"Requesting url: {url}");
-            var request = await GetAsync(url);
+            DebugTrace?.WriteLine($"Requesting route: {route}");
+            var request = await GetAsync(route);
 
-            DebugTrace?.WriteLine($"Request at {url} returned with status code {request.StatusCode}");
+            DebugTrace?.WriteLine($"Request at route \"{route}\" returned with status code {request.StatusCode}");
 
             if ((int)request.StatusCode == 401) //official osu! api returns a 401 error code when API key is invalid.
                 throw new InvalidAPIKeyException();

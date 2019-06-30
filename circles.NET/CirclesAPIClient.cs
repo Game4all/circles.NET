@@ -15,6 +15,11 @@ namespace circles.NET
     public class CirclesAPIClient
     {
         /// <summary>
+        /// The https path to the official osu! api v1
+        /// </summary>
+        public const string API_V1_URL = "https://osu.ppy.sh/api/";
+
+        /// <summary>
         /// Gets the underlying <see cref="CirclesHttpClient"/> Http client backing this <see cref="CirclesAPIClient"/> instance
         /// </summary>
         public CirclesHttpClient Client { get; }
@@ -22,6 +27,7 @@ namespace circles.NET
         private CirclesAPIClient()
         {
             Client = new CirclesHttpClient();
+            BaseEndpoint = new Uri(API_V1_URL);
         }
 
         /// <summary>
@@ -45,6 +51,7 @@ namespace circles.NET
         {
             APIKey = apiKey;
             Client = new CirclesHttpClient(handler, true);
+            BaseEndpoint = new Uri(API_V1_URL);
         }
 
         /// <summary>
@@ -182,13 +189,17 @@ namespace circles.NET
             => await Client.GetFromJSON<T>(CreateURL(endPoint, "k", APIKey, queryStrings));
 
         /// <summary>
-        /// The defaut address to which API requests are made.
-        /// <para>Override this if you need to pass API requests to eg: Ripple API</para>
+        /// The address of the API server to which API requests are made against.
+        /// <para>Defaults to the official osu! v1 api server url</para>
         /// </summary>
-        protected virtual string BaseEndpoint => $"https://osu.ppy.sh/api/";
+        public Uri BaseEndpoint
+        {
+            get => Client.BaseAddress;
+            set => Client.BaseAddress = value;
+        }
 
         /// <summary>
-        /// Returns a complete URL to the API
+        /// Returns a partial url to the given endpoint with the given query strings serialized into the url
         /// </summary>
         /// <param name="endpoint">The endpoint</param>
         /// <param name="queryStrings">The query strings</param>
@@ -196,7 +207,6 @@ namespace circles.NET
         protected string CreateURL(string endpoint, params object[] queryStrings)
         {
             var sb = new StringBuilder();
-            sb.Append(BaseEndpoint);
             sb.Append(endpoint);
 
             for (int i = 0; i < queryStrings.Length; i += 2) //query strings are given this way [0] = QueryStringName, [1] = QueryStringValue
