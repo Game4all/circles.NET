@@ -1,12 +1,10 @@
 ﻿using circles.NET.Enums;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace circles.NET.Converters
 {
-    public class ModsJSONConverter : JsonConverter
+    internal class ModsJSONConverter : JsonConverter
     {
         public ModsJSONConverter()
         {

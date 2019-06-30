@@ -3,7 +3,7 @@ using System;
 
 namespace circles.NET.Converters
 {
-    public class TimespanConverter : JsonConverter
+    internal class TimespanConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {

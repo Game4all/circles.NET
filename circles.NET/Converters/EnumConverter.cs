@@ -3,7 +3,7 @@ using System;
 
 namespace circles.NET.Converters
 {
-    public class EnumConverter<T> : JsonConverter
+    internal class EnumConverter<T> : JsonConverter
         where T : Enum
     {
         public override bool CanConvert(Type objectType) => objectType == typeof(T);
