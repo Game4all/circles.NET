@@ -4,17 +4,140 @@
 ## Contents
 
 - [APIBeatmap](#T-circles-NET-Models-APIBeatmap 'circles.NET.Models.APIBeatmap')
+  - [AR](#P-circles-NET-Models-APIBeatmap-AR 'circles.NET.Models.APIBeatmap.AR')
+  - [AimRating](#P-circles-NET-Models-APIBeatmap-AimRating 'circles.NET.Models.APIBeatmap.AimRating')
+  - [ApprovedDate](#P-circles-NET-Models-APIBeatmap-ApprovedDate 'circles.NET.Models.APIBeatmap.ApprovedDate')
+  - [ApprovedStatus](#P-circles-NET-Models-APIBeatmap-ApprovedStatus 'circles.NET.Models.APIBeatmap.ApprovedStatus')
+  - [Artist](#P-circles-NET-Models-APIBeatmap-Artist 'circles.NET.Models.APIBeatmap.Artist')
+  - [AudioUnavalaible](#P-circles-NET-Models-APIBeatmap-AudioUnavalaible 'circles.NET.Models.APIBeatmap.AudioUnavalaible')
+  - [BeatmapId](#P-circles-NET-Models-APIBeatmap-BeatmapId 'circles.NET.Models.APIBeatmap.BeatmapId')
+  - [Bpm](#P-circles-NET-Models-APIBeatmap-Bpm 'circles.NET.Models.APIBeatmap.Bpm')
+  - [CS](#P-circles-NET-Models-APIBeatmap-CS 'circles.NET.Models.APIBeatmap.CS')
+  - [Creator](#P-circles-NET-Models-APIBeatmap-Creator 'circles.NET.Models.APIBeatmap.Creator')
+  - [Difficulty](#P-circles-NET-Models-APIBeatmap-Difficulty 'circles.NET.Models.APIBeatmap.Difficulty')
+  - [DownloadUnavalaible](#P-circles-NET-Models-APIBeatmap-DownloadUnavalaible 'circles.NET.Models.APIBeatmap.DownloadUnavalaible')
+  - [FavouriteCount](#P-circles-NET-Models-APIBeatmap-FavouriteCount 'circles.NET.Models.APIBeatmap.FavouriteCount')
+  - [Gamemode](#P-circles-NET-Models-APIBeatmap-Gamemode 'circles.NET.Models.APIBeatmap.Gamemode')
+  - [Genre](#P-circles-NET-Models-APIBeatmap-Genre 'circles.NET.Models.APIBeatmap.Genre')
+  - [HP](#P-circles-NET-Models-APIBeatmap-HP 'circles.NET.Models.APIBeatmap.HP')
+  - [Language](#P-circles-NET-Models-APIBeatmap-Language 'circles.NET.Models.APIBeatmap.Language')
+  - [LastUpdate](#P-circles-NET-Models-APIBeatmap-LastUpdate 'circles.NET.Models.APIBeatmap.LastUpdate')
+  - [MD5](#P-circles-NET-Models-APIBeatmap-MD5 'circles.NET.Models.APIBeatmap.MD5')
+  - [MapsetId](#P-circles-NET-Models-APIBeatmap-MapsetId 'circles.NET.Models.APIBeatmap.MapsetId')
+  - [MaxCombo](#P-circles-NET-Models-APIBeatmap-MaxCombo 'circles.NET.Models.APIBeatmap.MaxCombo')
+  - [NormalObjectCount](#P-circles-NET-Models-APIBeatmap-NormalObjectCount 'circles.NET.Models.APIBeatmap.NormalObjectCount')
+  - [OD](#P-circles-NET-Models-APIBeatmap-OD 'circles.NET.Models.APIBeatmap.OD')
+  - [Passcount](#P-circles-NET-Models-APIBeatmap-Passcount 'circles.NET.Models.APIBeatmap.Passcount')
+  - [PlaybableLength](#P-circles-NET-Models-APIBeatmap-PlaybableLength 'circles.NET.Models.APIBeatmap.PlaybableLength')
+  - [Playcount](#P-circles-NET-Models-APIBeatmap-Playcount 'circles.NET.Models.APIBeatmap.Playcount')
+  - [Rating](#P-circles-NET-Models-APIBeatmap-Rating 'circles.NET.Models.APIBeatmap.Rating')
+  - [SliderObjectCount](#P-circles-NET-Models-APIBeatmap-SliderObjectCount 'circles.NET.Models.APIBeatmap.SliderObjectCount')
+  - [Source](#P-circles-NET-Models-APIBeatmap-Source 'circles.NET.Models.APIBeatmap.Source')
+  - [SpeedRating](#P-circles-NET-Models-APIBeatmap-SpeedRating 'circles.NET.Models.APIBeatmap.SpeedRating')
+  - [SpinnerObjectCount](#P-circles-NET-Models-APIBeatmap-SpinnerObjectCount 'circles.NET.Models.APIBeatmap.SpinnerObjectCount')
+  - [StarRating](#P-circles-NET-Models-APIBeatmap-StarRating 'circles.NET.Models.APIBeatmap.StarRating')
+  - [SubmissionDate](#P-circles-NET-Models-APIBeatmap-SubmissionDate 'circles.NET.Models.APIBeatmap.SubmissionDate')
+  - [Tags](#P-circles-NET-Models-APIBeatmap-Tags 'circles.NET.Models.APIBeatmap.Tags')
+  - [Title](#P-circles-NET-Models-APIBeatmap-Title 'circles.NET.Models.APIBeatmap.Title')
+  - [TotalLength](#P-circles-NET-Models-APIBeatmap-TotalLength 'circles.NET.Models.APIBeatmap.TotalLength')
 - [APIMultiplayerGame](#T-circles-NET-Models-APIMultiplayerGame 'circles.NET.Models.APIMultiplayerGame')
+  - [BeatmapId](#P-circles-NET-Models-APIMultiplayerGame-BeatmapId 'circles.NET.Models.APIMultiplayerGame.BeatmapId')
+  - [EndTime](#P-circles-NET-Models-APIMultiplayerGame-EndTime 'circles.NET.Models.APIMultiplayerGame.EndTime')
+  - [GameId](#P-circles-NET-Models-APIMultiplayerGame-GameId 'circles.NET.Models.APIMultiplayerGame.GameId')
+  - [Gamemode](#P-circles-NET-Models-APIMultiplayerGame-Gamemode 'circles.NET.Models.APIMultiplayerGame.Gamemode')
+  - [Mods](#P-circles-NET-Models-APIMultiplayerGame-Mods 'circles.NET.Models.APIMultiplayerGame.Mods')
+  - [Scores](#P-circles-NET-Models-APIMultiplayerGame-Scores 'circles.NET.Models.APIMultiplayerGame.Scores')
+  - [StartTime](#P-circles-NET-Models-APIMultiplayerGame-StartTime 'circles.NET.Models.APIMultiplayerGame.StartTime')
 - [APIMultiplayerRoom](#T-circles-NET-Models-APIMultiplayerRoom 'circles.NET.Models.APIMultiplayerRoom')
+  - [Games](#P-circles-NET-Models-APIMultiplayerRoom-Games 'circles.NET.Models.APIMultiplayerRoom.Games')
+  - [Info](#P-circles-NET-Models-APIMultiplayerRoom-Info 'circles.NET.Models.APIMultiplayerRoom.Info')
 - [APIMultiplayerRoomInfo](#T-circles-NET-Models-APIMultiplayerRoomInfo 'circles.NET.Models.APIMultiplayerRoomInfo')
+  - [EndTime](#P-circles-NET-Models-APIMultiplayerRoomInfo-EndTime 'circles.NET.Models.APIMultiplayerRoomInfo.EndTime')
+  - [MatchId](#P-circles-NET-Models-APIMultiplayerRoomInfo-MatchId 'circles.NET.Models.APIMultiplayerRoomInfo.MatchId')
+  - [Name](#P-circles-NET-Models-APIMultiplayerRoomInfo-Name 'circles.NET.Models.APIMultiplayerRoomInfo.Name')
+  - [StartTime](#P-circles-NET-Models-APIMultiplayerRoomInfo-StartTime 'circles.NET.Models.APIMultiplayerRoomInfo.StartTime')
 - [APIReplay](#T-circles-NET-Models-APIReplay 'circles.NET.Models.APIReplay')
 - [APIScore](#T-circles-NET-Models-APIScore 'circles.NET.Models.APIScore')
+  - [Count100s](#P-circles-NET-Models-APIScore-Count100s 'circles.NET.Models.APIScore.Count100s')
+  - [Count300s](#P-circles-NET-Models-APIScore-Count300s 'circles.NET.Models.APIScore.Count300s')
+  - [Count50s](#P-circles-NET-Models-APIScore-Count50s 'circles.NET.Models.APIScore.Count50s')
+  - [CountGeki](#P-circles-NET-Models-APIScore-CountGeki 'circles.NET.Models.APIScore.CountGeki')
+  - [CountKatu](#P-circles-NET-Models-APIScore-CountKatu 'circles.NET.Models.APIScore.CountKatu')
+  - [CountMisses](#P-circles-NET-Models-APIScore-CountMisses 'circles.NET.Models.APIScore.CountMisses')
+  - [Date](#P-circles-NET-Models-APIScore-Date 'circles.NET.Models.APIScore.Date')
+  - [ID](#P-circles-NET-Models-APIScore-ID 'circles.NET.Models.APIScore.ID')
+  - [MaxCombo](#P-circles-NET-Models-APIScore-MaxCombo 'circles.NET.Models.APIScore.MaxCombo')
+  - [Mods](#P-circles-NET-Models-APIScore-Mods 'circles.NET.Models.APIScore.Mods')
+  - [Perfect](#P-circles-NET-Models-APIScore-Perfect 'circles.NET.Models.APIScore.Perfect')
+  - [Pp](#P-circles-NET-Models-APIScore-Pp 'circles.NET.Models.APIScore.Pp')
+  - [Rank](#P-circles-NET-Models-APIScore-Rank 'circles.NET.Models.APIScore.Rank')
+  - [ReplayAvalaible](#P-circles-NET-Models-APIScore-ReplayAvalaible 'circles.NET.Models.APIScore.ReplayAvalaible')
+  - [Score](#P-circles-NET-Models-APIScore-Score 'circles.NET.Models.APIScore.Score')
+  - [UserId](#P-circles-NET-Models-APIScore-UserId 'circles.NET.Models.APIScore.UserId')
+  - [Username](#P-circles-NET-Models-APIScore-Username 'circles.NET.Models.APIScore.Username')
 - [APIUser](#T-circles-NET-Models-APIUser 'circles.NET.Models.APIUser')
+  - [Accuracy](#P-circles-NET-Models-APIUser-Accuracy 'circles.NET.Models.APIUser.Accuracy')
+  - [Count100](#P-circles-NET-Models-APIUser-Count100 'circles.NET.Models.APIUser.Count100')
+  - [Count300](#P-circles-NET-Models-APIUser-Count300 'circles.NET.Models.APIUser.Count300')
+  - [Count50](#P-circles-NET-Models-APIUser-Count50 'circles.NET.Models.APIUser.Count50')
+  - [CountRankA](#P-circles-NET-Models-APIUser-CountRankA 'circles.NET.Models.APIUser.CountRankA')
+  - [CountRankS](#P-circles-NET-Models-APIUser-CountRankS 'circles.NET.Models.APIUser.CountRankS')
+  - [CountRankSH](#P-circles-NET-Models-APIUser-CountRankSH 'circles.NET.Models.APIUser.CountRankSH')
+  - [CountRankSS](#P-circles-NET-Models-APIUser-CountRankSS 'circles.NET.Models.APIUser.CountRankSS')
+  - [CountRankXH](#P-circles-NET-Models-APIUser-CountRankXH 'circles.NET.Models.APIUser.CountRankXH')
+  - [Country](#P-circles-NET-Models-APIUser-Country 'circles.NET.Models.APIUser.Country')
+  - [JoinDate](#P-circles-NET-Models-APIUser-JoinDate 'circles.NET.Models.APIUser.JoinDate')
+  - [Level](#P-circles-NET-Models-APIUser-Level 'circles.NET.Models.APIUser.Level')
+  - [Playcount](#P-circles-NET-Models-APIUser-Playcount 'circles.NET.Models.APIUser.Playcount')
+  - [PpCountryRank](#P-circles-NET-Models-APIUser-PpCountryRank 'circles.NET.Models.APIUser.PpCountryRank')
+  - [PpRank](#P-circles-NET-Models-APIUser-PpRank 'circles.NET.Models.APIUser.PpRank')
+  - [PpRaw](#P-circles-NET-Models-APIUser-PpRaw 'circles.NET.Models.APIUser.PpRaw')
+  - [RankedScore](#P-circles-NET-Models-APIUser-RankedScore 'circles.NET.Models.APIUser.RankedScore')
+  - [TimePlayed](#P-circles-NET-Models-APIUser-TimePlayed 'circles.NET.Models.APIUser.TimePlayed')
+  - [TotalScore](#P-circles-NET-Models-APIUser-TotalScore 'circles.NET.Models.APIUser.TotalScore')
+  - [UserId](#P-circles-NET-Models-APIUser-UserId 'circles.NET.Models.APIUser.UserId')
+  - [Username](#P-circles-NET-Models-APIUser-Username 'circles.NET.Models.APIUser.Username')
 - [APIUserBest](#T-circles-NET-Models-APIUserBest 'circles.NET.Models.APIUserBest')
+  - [BeatmapId](#P-circles-NET-Models-APIUserBest-BeatmapId 'circles.NET.Models.APIUserBest.BeatmapId')
+  - [Count100s](#P-circles-NET-Models-APIUserBest-Count100s 'circles.NET.Models.APIUserBest.Count100s')
+  - [Count300s](#P-circles-NET-Models-APIUserBest-Count300s 'circles.NET.Models.APIUserBest.Count300s')
+  - [Count50s](#P-circles-NET-Models-APIUserBest-Count50s 'circles.NET.Models.APIUserBest.Count50s')
+  - [CountGeki](#P-circles-NET-Models-APIUserBest-CountGeki 'circles.NET.Models.APIUserBest.CountGeki')
+  - [CountKatu](#P-circles-NET-Models-APIUserBest-CountKatu 'circles.NET.Models.APIUserBest.CountKatu')
+  - [CountMisses](#P-circles-NET-Models-APIUserBest-CountMisses 'circles.NET.Models.APIUserBest.CountMisses')
+  - [Date](#P-circles-NET-Models-APIUserBest-Date 'circles.NET.Models.APIUserBest.Date')
+  - [ID](#P-circles-NET-Models-APIUserBest-ID 'circles.NET.Models.APIUserBest.ID')
+  - [MaxCombo](#P-circles-NET-Models-APIUserBest-MaxCombo 'circles.NET.Models.APIUserBest.MaxCombo')
+  - [Mods](#P-circles-NET-Models-APIUserBest-Mods 'circles.NET.Models.APIUserBest.Mods')
+  - [Perfect](#P-circles-NET-Models-APIUserBest-Perfect 'circles.NET.Models.APIUserBest.Perfect')
+  - [Pp](#P-circles-NET-Models-APIUserBest-Pp 'circles.NET.Models.APIUserBest.Pp')
+  - [Rank](#P-circles-NET-Models-APIUserBest-Rank 'circles.NET.Models.APIUserBest.Rank')
+  - [Score](#P-circles-NET-Models-APIUserBest-Score 'circles.NET.Models.APIUserBest.Score')
+  - [UserId](#P-circles-NET-Models-APIUserBest-UserId 'circles.NET.Models.APIUserBest.UserId')
 - [APIUserRecent](#T-circles-NET-Models-APIUserRecent 'circles.NET.Models.APIUserRecent')
+  - [Accuracy](#P-circles-NET-Models-APIUserRecent-Accuracy 'circles.NET.Models.APIUserRecent.Accuracy')
+  - [BeatmapId](#P-circles-NET-Models-APIUserRecent-BeatmapId 'circles.NET.Models.APIUserRecent.BeatmapId')
+  - [Count100s](#P-circles-NET-Models-APIUserRecent-Count100s 'circles.NET.Models.APIUserRecent.Count100s')
+  - [Count300s](#P-circles-NET-Models-APIUserRecent-Count300s 'circles.NET.Models.APIUserRecent.Count300s')
+  - [Count50s](#P-circles-NET-Models-APIUserRecent-Count50s 'circles.NET.Models.APIUserRecent.Count50s')
+  - [CountGeki](#P-circles-NET-Models-APIUserRecent-CountGeki 'circles.NET.Models.APIUserRecent.CountGeki')
+  - [CountKatu](#P-circles-NET-Models-APIUserRecent-CountKatu 'circles.NET.Models.APIUserRecent.CountKatu')
+  - [CountMisses](#P-circles-NET-Models-APIUserRecent-CountMisses 'circles.NET.Models.APIUserRecent.CountMisses')
+  - [Date](#P-circles-NET-Models-APIUserRecent-Date 'circles.NET.Models.APIUserRecent.Date')
+  - [MaxCombo](#P-circles-NET-Models-APIUserRecent-MaxCombo 'circles.NET.Models.APIUserRecent.MaxCombo')
+  - [Mods](#P-circles-NET-Models-APIUserRecent-Mods 'circles.NET.Models.APIUserRecent.Mods')
+  - [Perfect](#P-circles-NET-Models-APIUserRecent-Perfect 'circles.NET.Models.APIUserRecent.Perfect')
+  - [Pp](#P-circles-NET-Models-APIUserRecent-Pp 'circles.NET.Models.APIUserRecent.Pp')
+  - [Rank](#P-circles-NET-Models-APIUserRecent-Rank 'circles.NET.Models.APIUserRecent.Rank')
+  - [Score](#P-circles-NET-Models-APIUserRecent-Score 'circles.NET.Models.APIUserRecent.Score')
+  - [UserId](#P-circles-NET-Models-APIUserRecent-UserId 'circles.NET.Models.APIUserRecent.UserId')
 - [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient')
   - [Constructor(apiKey)](#M-circles-NET-CirclesAPIClient-#ctor-System-String- 'circles.NET.CirclesAPIClient.#ctor(System.String)')
   - [Constructor(apiKey,handler,DisposeHandler)](#M-circles-NET-CirclesAPIClient-#ctor-System-String,System-Net-Http-HttpMessageHandler,System-Boolean- 'circles.NET.CirclesAPIClient.#ctor(System.String,System.Net.Http.HttpMessageHandler,System.Boolean)')
+  - [APIKey](#P-circles-NET-CirclesAPIClient-APIKey 'circles.NET.CirclesAPIClient.APIKey')
+  - [BaseEndpoint](#P-circles-NET-CirclesAPIClient-BaseEndpoint 'circles.NET.CirclesAPIClient.BaseEndpoint')
+  - [Client](#P-circles-NET-CirclesAPIClient-Client 'circles.NET.CirclesAPIClient.Client')
+  - [CreateURL(endpoint,queryStrings)](#M-circles-NET-CirclesAPIClient-CreateURL-System-String,System-Object[]- 'circles.NET.CirclesAPIClient.CreateURL(System.String,System.Object[])')
   - [GetBeatmapsByIdAsync(beatmap_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByIdAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByIdAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetBeatmapsByMapsetAsync(mapset_id,since,creator,gamemode,includeConversions,hash,limit)](#M-circles-NET-CirclesAPIClient-GetBeatmapsByMapsetAsync-System-Nullable{System-Int64},System-Nullable{System-DateTime},System-String,System-Nullable{circles-NET-Enums-Gamemode},System-Nullable{circles-NET-Enums-Conversions},System-String,System-Nullable{System-Int32}- 'circles.NET.CirclesAPIClient.GetBeatmapsByMapsetAsync(System.Nullable{System.Int64},System.Nullable{System.DateTime},System.String,System.Nullable{circles.NET.Enums.Gamemode},System.Nullable{circles.NET.Enums.Conversions},System.String,System.Nullable{System.Int32})')
   - [GetMultiplayerRoomsAsync(roomId)](#M-circles-NET-CirclesAPIClient-GetMultiplayerRoomsAsync-System-Int64- 'circles.NET.CirclesAPIClient.GetMultiplayerRoomsAsync(System.Int64)')
@@ -976,7 +1099,7 @@ circles.NET
 An asynchronous client wrapper class for the osu! api v1
 
 <a name='M-circles-NET-CirclesAPIClient-#ctor-System-String-'></a>
-### #ctor(apiKey) `constructor`
+### Constructor(apiKey) `constructor`
 
 ##### Summary
 
@@ -989,7 +1112,7 @@ Constructs an instance of [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'ci
 | apiKey | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
 <a name='M-circles-NET-CirclesAPIClient-#ctor-System-String,System-Net-Http-HttpMessageHandler,System-Boolean-'></a>
-### #ctor(apiKey,handler,DisposeHandler) `constructor`
+### Constructor(apiKey,handler,DisposeHandler) `constructor`
 
 ##### Summary
 
@@ -1004,6 +1127,13 @@ Use this ctor if you need to implement request caching.
 | handler | [System.Net.Http.HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') | The [HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') to use for this [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient') |
 | DisposeHandler | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | Bool indicating if the attached [HttpMessageHandler](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Net.Http.HttpMessageHandler 'System.Net.Http.HttpMessageHandler') should be disposed on [CirclesAPIClient](#T-circles-NET-CirclesAPIClient 'circles.NET.CirclesAPIClient') disposal |
 
+<a name='F-circles-NET-CirclesAPIClient-API_V1_URL'></a>
+### API_V1_URL `constants`
+
+##### Summary
+
+The https path to the official osu! api v1
+
 <a name='P-circles-NET-CirclesAPIClient-APIKey'></a>
 ### APIKey `property`
 
@@ -1016,9 +1146,9 @@ Gets or sets the API Key for this [CirclesAPIClient](#T-circles-NET-CirclesAPICl
 
 ##### Summary
 
-The defaut address to which API requests are made.
+The address of the API server to which API requests are made against.
 
-Override this if you need to pass API requests to eg: Ripple API
+Defaults to the official osu! v1 api server url
 
 <a name='P-circles-NET-CirclesAPIClient-Client'></a>
 ### Client `property`
@@ -1032,7 +1162,7 @@ Gets the underlying [CirclesHttpClient](#T-circles-NET-HTTP-CirclesHttpClient 'c
 
 ##### Summary
 
-Returns a complete URL to the API
+Returns a partial url to the given endpoint with the given query strings serialized into the url
 
 ##### Returns
 
