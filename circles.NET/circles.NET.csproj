@@ -23,9 +23,10 @@ Please note this library is ASYNCHRONOUS only</Description>
 - **Changed** API error exception handling.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageLicenseUrl>https://tldrlegal.com/license/unlicense</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <Version>1.1.5</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
