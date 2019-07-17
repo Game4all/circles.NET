@@ -10,7 +10,7 @@ namespace circles.NET.SampleApplication
     class Program
     {
         //This sample program will dump the provided user's top 50 scores
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             if (args.Length < 1)
             {
@@ -20,7 +20,20 @@ namespace circles.NET.SampleApplication
 
             try
             {
-                WrappedMain(args).GetAwaiter().GetResult();
+                var apiKey = File.Exists("API_KEY.txt") ? File.ReadAllText("API_KEY.txt") : throw new FileNotFoundException($"API_KEY.txt file containing the API Key wasn't found.");
+                var apiClient = new CirclesAPIClient(apiKey);
+
+                var gameMode = args.Length >= 2 ? (Gamemode)int.Parse(args[1]) : Gamemode.Standard;
+                var bests = await apiClient.GetUserBestAsync(args[0], gameMode, 50);
+
+                //basic average pp per play calc
+                float averagePP = 0;
+                bests.ToList().ForEach(t => averagePP += t.Pp);
+                averagePP /= 50;
+
+                await Task.WhenAll(bests.Select(x => ShowUserBest(x, apiClient, args[0])));
+
+                await Console.Out.WriteLineAsync($"Average pp per play: {averagePP}");
             }
             catch (Exception e)
             {
@@ -34,26 +47,6 @@ namespace circles.NET.SampleApplication
 
                 throw;
             }
-        }
-
-        static async Task WrappedMain(string[] args)
-        {
-            var apiKey = File.Exists("API_KEY.txt") ? File.ReadAllText("API_KEY.txt") : throw new FileNotFoundException($"API_KEY.txt file containing the API Key wasn't found.");
-            var apiClient = new CirclesAPIClient(apiKey);
-
-            var gameMode = args.Length >= 2 ? (Gamemode)int.Parse(args[1]) : Gamemode.Standard;
-            var bests = await apiClient.GetUserBestAsync(args[0], gameMode, 50);
-
-            //basic average pp per play calc
-            float averagePP = 0;
-            bests.ToList().ForEach(t => averagePP += t.Pp);
-            averagePP /= 50;
-
-            await Task.WhenAll(bests.Select(x => ShowUserBest(x, apiClient, args[0])));
-
-            await Console.Out.WriteLineAsync($"Average pp per play: {averagePP}");
-
-            return;
         }
 
         static async Task ShowUserBest(APIUserBest score, CirclesAPIClient apiClient, string player)
