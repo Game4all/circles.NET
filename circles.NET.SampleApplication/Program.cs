@@ -39,10 +39,12 @@ namespace circles.NET.SampleApplication
             {
                 if (e is FileNotFoundException)
                 {
-                    File.Create("API_KEY.txt");
-                    Console.WriteLine($"The API_KEY.txt file containing the API Key wasn't found and so have been created");
-                    Console.WriteLine($"Please paste in the file your osu! api key.");
-                    Environment.Exit(1);
+                    using (File.Create("API_KEY.txt"))
+                    {
+                        Console.WriteLine($"The API_KEY.txt file containing the API Key wasn't found and so have been created");
+                        Console.WriteLine($"Please paste in the file your osu! api key.");
+                        Environment.Exit(1);
+                    }
                 }
 
                 throw;
