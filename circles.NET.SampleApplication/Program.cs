@@ -27,9 +27,7 @@ namespace circles.NET.SampleApplication
                 var bests = await apiClient.GetUserBestAsync(args[0], gameMode, 50);
 
                 //basic average pp per play calc
-                float averagePP = 0;
-                bests.ToList().ForEach(t => averagePP += t.Pp);
-                averagePP /= 50;
+                float averagePP = bests.Average(play => play.Pp);
 
                 await Task.WhenAll(bests.Select(x => ShowUserBest(x, apiClient, args[0])));
 
