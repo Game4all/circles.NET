@@ -10,7 +10,7 @@ Please note this library is ASYNCHRONOUS only</Description>
     <RepositoryUrl>https://github.com/Game4all/circles.NET</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>osu! api C# NetStandard osugame async asynchronous</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>Made CirclesAPIClient.BaseEndpoint a public property</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl></PackageLicenseUrl>
