@@ -1,13 +1,13 @@
-﻿using circles.NET.Enums;
-using circles.NET.Exceptions;
-using circles.NET.HTTP;
-using circles.NET.Models;
+﻿using circles.NET.V1.Enums;
+using circles.NET.V1.Exceptions;
+using circles.NET.V1.HTTP;
+using circles.NET.V1.Models;
 using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace circles.NET
+namespace circles.NET.V1
 {
     /// <summary>
     /// An asynchronous client wrapper class for the osu! api v1

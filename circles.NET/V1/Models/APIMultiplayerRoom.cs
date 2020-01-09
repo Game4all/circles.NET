@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace circles.NET.Models
+namespace circles.NET.V1.Models
 {
     /// <summary>
     /// A class representing an osu! ongoing or finished multiplayer room returned by API

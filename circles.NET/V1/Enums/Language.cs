@@ -1,4 +1,4 @@
-﻿namespace circles.NET.Enums
+﻿namespace circles.NET.V1.Enums
 {
     public enum Language
     {
@@ -8,7 +8,7 @@
         Japanese = 3,
         Chinese = 4,
         Instrumental = 5,
-        Korean = 6, 
+        Korean = 6,
         French = 7,
         German = 8,
         Swedish = 9,

@@ -1,8 +1,8 @@
-﻿using circles.NET.Enums;
+﻿using circles.NET.V1.Enums;
 using Newtonsoft.Json;
 using System;
 
-namespace circles.NET.Converters
+namespace circles.NET.V1.Converters
 {
     internal class ModsJSONConverter : JsonConverter
     {

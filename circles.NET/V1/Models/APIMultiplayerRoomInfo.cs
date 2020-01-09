@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace circles.NET.Models
+namespace circles.NET.V1.Models
 {
     /// <summary>
     /// Information about an ongoing or finished <see cref="APIMultiplayerRoom"/>

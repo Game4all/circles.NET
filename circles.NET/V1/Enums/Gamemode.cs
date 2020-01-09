@@ -1,4 +1,4 @@
-﻿namespace circles.NET.Enums
+﻿namespace circles.NET.V1.Enums
 {
     public enum Gamemode
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace circles.NET.Exceptions
+namespace circles.NET.V1.Exceptions
 {
     public class APIErrorException : Exception
     {

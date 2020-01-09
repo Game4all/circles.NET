@@ -1,7 +1,6 @@
-﻿using circles.NET.Exceptions;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace circles.NET.Models
+namespace circles.NET.V1.Models
 {
     /// <summary>
     /// A class representing replay data returned by API

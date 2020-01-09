@@ -1,10 +1,10 @@
-﻿using circles.NET.Converters;
-using circles.NET.Enums;
+﻿using circles.NET.V1.Converters;
+using circles.NET.V1.Enums;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace circles.NET.Models
+namespace circles.NET.V1.Models
 {
     /// <summary>
     /// A class representing an osu! ongoing or finished multiplayer game returned by API

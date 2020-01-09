@@ -1,18 +1,20 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace circles.NET.Converters
+namespace circles.NET.V1.Converters
 {
-    internal class EnumConverter<T> : JsonConverter
-        where T : Enum
+    internal class StringBoolConverter : JsonConverter
     {
-        public override bool CanConvert(Type objectType) => objectType == typeof(T);
+        public StringBoolConverter()
+        {
+        }
+
+        public override bool CanConvert(Type objectType) => true;
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            var val = int.Parse((string)reader.Value);
-            var enumVal = Enum.ToObject(typeof(T), val);
-            return enumVal;
+            bool.TryParse((string)reader.Value, out var bools);
+            return bools;
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)

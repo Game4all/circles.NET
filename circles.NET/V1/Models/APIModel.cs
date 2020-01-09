@@ -1,7 +1,7 @@
-﻿using circles.NET.Exceptions;
+﻿using circles.NET.V1.Exceptions;
 using Newtonsoft.Json;
 
-namespace circles.NET.Models
+namespace circles.NET.V1.Models
 {
     public class APIModel
     {

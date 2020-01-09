@@ -1,10 +1,10 @@
-﻿using circles.NET.Exceptions;
+﻿using circles.NET.V1.Exceptions;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace circles.NET.HTTP
+namespace circles.NET.V1.HTTP
 {
     /// <summary>
     /// A <see cref="HttpClient"/> with methods for deserializing directly API requests content into usable objects
@@ -18,7 +18,7 @@ namespace circles.NET.HTTP
         {
         }
 
-        internal CirclesHttpClient(HttpMessageHandler handler, bool disposeHandler) 
+        internal CirclesHttpClient(HttpMessageHandler handler, bool disposeHandler)
             : base(handler, disposeHandler)
         {
         }
