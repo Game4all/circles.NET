@@ -1,4 +1,5 @@
-﻿using circles.NET.Enums;
+﻿using circles.NET.V1;
+using circles.NET.V1.Enums;
 using circles.NET.V1.Models;
 using System;
 using System.IO;
