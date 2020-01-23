@@ -37,14 +37,14 @@ namespace circles.NET.V2.HTTP
         {
             try
             {
-                DebugTrace?.WriteLine($"Requesting route: {route}");
+                logTrace($"Requesting route: {route}");
                 var request = await GetAsync(route);
 
-                DebugTrace?.WriteLine($"Request at route \"{route}\" returned with status code {request.StatusCode}");
+                var content = await request.Content.ReadAsStringAsync();
 
                 if (request.IsSuccessStatusCode)
                 {
-                    var content = await request.Content.ReadAsStringAsync();
+                    logTrace($"Request at route \"{route}\" returned with status code {request.StatusCode}");
 
                     try
                     {
@@ -57,6 +57,8 @@ namespace circles.NET.V2.HTTP
                 } 
                 else
                 {
+                    logTrace($"Request at route \"{route}\" returned with status code {request.StatusCode} and error body {content}");
+
                     if (request.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                         throw new InvalidOAuthTokenException(); //we may want to add some additional info for the required oauth scopes
 
@@ -68,5 +70,8 @@ namespace circles.NET.V2.HTTP
                 throw e;
             }
         }
+
+        [Conditional("DEBUG")]
+        private void logTrace(string message) => DebugTrace?.WriteLine(message);
     }
 }
