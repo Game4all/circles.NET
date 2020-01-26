@@ -14,8 +14,6 @@ namespace circles.NET.V2.HTTP
     /// </summary>
     public sealed class CirclesOAuthClient : HttpClient
     {
-        public TraceListener DebugTrace { get; set; }
-
         internal string OAuthToken 
         { 
             set
@@ -43,14 +41,14 @@ namespace circles.NET.V2.HTTP
         {
             try
             {
-                logTrace($"Requesting route: {route}");
+                Debug.WriteLine($"Requesting route: {route}");
                 var request = await GetAsync(route);
 
                 var content = await request.Content.ReadAsStringAsync();
 
                 if (request.IsSuccessStatusCode)
                 {
-                    logTrace($"Request at route \"{route}\" returned with status code {request.StatusCode}");
+                    Debug.WriteLine($"Request at route \"{route}\" returned with status code {request.StatusCode}");
 
                     try
                     {
@@ -63,7 +61,7 @@ namespace circles.NET.V2.HTTP
                 } 
                 else
                 {
-                    logTrace($"Request at route \"{route}\" returned with status code {request.StatusCode} and error body {content}");
+                    Debug.WriteLine($"Request at route \"{route}\" returned with status code {request.StatusCode} and error body {content}");
 
                     if (request.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                         throw new InvalidOAuthTokenException(); //we may want to add some additional info for the required oauth scopes
@@ -76,8 +74,5 @@ namespace circles.NET.V2.HTTP
                 throw e;
             }
         }
-
-        [Conditional("DEBUG")]
-        private void logTrace(string message) => DebugTrace?.WriteLine(message);
     }
 }
