@@ -12,7 +12,7 @@ namespace circles.NET.V2.HTTP
     /// Also handles OAuth login.
     /// <para>Intended to be only used by <see cref="CirclesAPIV2Client"/></para>
     /// </summary>
-    public sealed class CirclesOAuthClient : HttpClient
+    internal sealed class CirclesOAuthClient : HttpClient
     {
         internal string OAuthToken 
         { 

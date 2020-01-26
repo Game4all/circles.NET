@@ -13,10 +13,7 @@ namespace circles.NET.V2
         /// </summary>
         public const string API_V2_URL = "https://osu.ppy.sh/api/v2/";
 
-        /// <summary>
-        /// Gets the underlying <see cref="CirclesOAuthClient"/> Http client backing this <see cref="CirclesAPIV2Client"/> instance
-        /// </summary>
-        public CirclesOAuthClient Client { get; }
+        private CirclesOAuthClient client;
 
         /// <summary>
         /// Constructs an instance of <see cref="CirclesAPIV2Client"/> using the specified OAuth token
@@ -24,7 +21,7 @@ namespace circles.NET.V2
         /// <param name="token">The osu!api v2 OAuth token</param>
         public CirclesAPIV2Client(string token)
         {
-            Client = new CirclesOAuthClient
+            client = new CirclesOAuthClient
             {
                 OAuthToken = token,
                 BaseAddress = new System.Uri(API_V2_URL)
@@ -39,7 +36,7 @@ namespace circles.NET.V2
         /// <param name="disposeHandler">Whether to dispose the <see cref="HttpMessageHandler"/></param>
         public CirclesAPIV2Client(string token, HttpMessageHandler handler, bool disposeHandler)
         {
-            Client = new CirclesOAuthClient(handler, disposeHandler)
+            client = new CirclesOAuthClient(handler, disposeHandler)
             {
                 OAuthToken = token,
                 BaseAddress = new System.Uri(API_V2_URL)
