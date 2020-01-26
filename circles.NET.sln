@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "circles.NET", "circles.NET\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "circles.NET.V1.SampleApplication", "circles.NET.SampleApplication\circles.NET.V1.SampleApplication.csproj", "{F49A74EB-9A26-4851-8C34-F48D432F5035}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "circles.NET.V2.SampleApplication", "circles.NET.V2.SampleApplication\circles.NET.V2.SampleApplication.csproj", "{B20FA524-D7A0-4A86-A0D8-BAE33F6E3351}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49A74EB-9A26-4851-8C34-F48D432F5035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20FA524-D7A0-4A86-A0D8-BAE33F6E3351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20FA524-D7A0-4A86-A0D8-BAE33F6E3351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20FA524-D7A0-4A86-A0D8-BAE33F6E3351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20FA524-D7A0-4A86-A0D8-BAE33F6E3351}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
