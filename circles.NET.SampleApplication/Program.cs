@@ -1,4 +1,8 @@
-﻿using circles.NET.V1;
+﻿//
+// This SampleApplication demonstrates how to use circles.NET to fetch the top 50 scores of the specified user using the APIv1 client.
+//
+
+using circles.NET.V1;
 using circles.NET.V1.Enums;
 using circles.NET.V1.Models;
 using System;
