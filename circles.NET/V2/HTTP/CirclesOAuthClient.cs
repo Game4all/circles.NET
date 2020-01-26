@@ -10,7 +10,7 @@ namespace circles.NET.V2.HTTP
     /// <summary>
     /// A <see cref="HttpClient"/> with methods for deserializing directly API requests content into usable objects
     /// Also handles OAuth login.
-    /// <para>Intended to be only used by <see cref="CirclesAPIClient"/></para>
+    /// <para>Intended to be only used by <see cref="CirclesAPIV2Client"/></para>
     /// </summary>
     public sealed class CirclesOAuthClient : HttpClient
     {
@@ -33,6 +33,12 @@ namespace circles.NET.V2.HTTP
         {
         }
 
+        /// <summary>
+        /// Performs a GET request asynchronously against the specified api route and deserializes the request reponse to an object of type <typeparamref name="T"/>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="route"></param>
+        /// <returns></returns>
         public async Task<T> GetFromJSON<T>(string route)
         {
             try
@@ -50,9 +56,9 @@ namespace circles.NET.V2.HTTP
                     {
                         return JsonConvert.DeserializeObject<T>(content);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
-                        throw;
+                        throw e;
                     }
                 } 
                 else
