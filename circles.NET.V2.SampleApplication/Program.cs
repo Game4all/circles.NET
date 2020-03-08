@@ -3,14 +3,22 @@
 //
 
 using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace circles.NET.V2.SampleApplication
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var apiClient = new CirclesAPIV2Client("kdsoksodos");
+            var idx = await apiClient.GetChangelogIndex();
+
+            var ch = idx.Streams.Where(t => t.Name == "lazer").First();
+
+            var chData = await apiClient.GetChangelogBuildForVersion(ch, "2019.508.0");
+            Console.WriteLine(chData.CreatedAt);
         }
     }
 }

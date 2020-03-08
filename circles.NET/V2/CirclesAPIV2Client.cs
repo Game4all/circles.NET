@@ -1,5 +1,7 @@
 ﻿using circles.NET.V2.HTTP;
+using circles.NET.V2.Models.Changelog;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace circles.NET.V2
 {
@@ -42,5 +44,22 @@ namespace circles.NET.V2
                 BaseAddress = new System.Uri(API_V2_URL)
             };
         }
+
+        #region Changelog
+
+        /// <summary>
+        /// Gets the <see cref="APIChangelogIndex"/> from the API.
+        /// </summary>
+        /// <returns></returns>
+        public Task<APIChangelogIndex> GetChangelogIndex() => client.GetFromJSON<APIChangelogIndex>("changelog");
+
+        /// <summary>
+        /// Gets a <see cref="APIChangelogBuild"/> for the given <see cref="APIUpdateStream"/> and specific version.
+        /// </summary>
+        /// <param name="build"></param>
+        /// <param name="versionString"></param>
+        /// <returns></returns>
+        public Task<APIChangelogBuild> GetChangelogBuildForVersion(APIUpdateStream build, string versionString) => client.GetFromJSON<APIChangelogBuild>($"changelog/{build.Name}/{versionString}");
+        #endregion Changelog
     }
 }
