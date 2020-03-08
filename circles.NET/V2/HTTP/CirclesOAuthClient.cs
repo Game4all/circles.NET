@@ -13,19 +13,19 @@ namespace circles.NET.V2.HTTP
     /// </summary>
     internal sealed class CirclesOAuthClient : HttpClient
     {
-        internal string OAuthToken 
-        { 
+        internal string OAuthToken
+        {
             set
             {
                 DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", value);
-            } 
+            }
         }
 
         internal CirclesOAuthClient()
         {
         }
 
-        internal CirclesOAuthClient(HttpMessageHandler handler, bool disposeHandler) 
+        internal CirclesOAuthClient(HttpMessageHandler handler, bool disposeHandler)
             : base(handler, disposeHandler)
         {
         }
@@ -57,7 +57,7 @@ namespace circles.NET.V2.HTTP
                     {
                         throw e;
                     }
-                } 
+                }
                 else
                 {
                     debug($"Request at route \"{route}\" returned with status code {request.StatusCode} and error body {content}");
@@ -67,7 +67,7 @@ namespace circles.NET.V2.HTTP
 
                     return default;
                 }
-            } 
+            }
             catch (Exception e)
             {
                 throw e;

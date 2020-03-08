@@ -60,6 +60,7 @@ namespace circles.NET.V2
         /// <param name="versionString"></param>
         /// <returns></returns>
         public Task<APIChangelogBuild> GetChangelogBuildForVersion(APIUpdateStream build, string versionString) => client.GetFromJSON<APIChangelogBuild>($"changelog/{build.Name}/{versionString}");
+
         #endregion Changelog
     }
 }
