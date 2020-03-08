@@ -1,7 +1,6 @@
 ﻿using circles.NET.V2.Exceptions;
 using Newtonsoft.Json;
 using System;
-using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -41,14 +40,14 @@ namespace circles.NET.V2.HTTP
         {
             try
             {
-                Debug.WriteLine($"Requesting route: {route}");
+                debug($"Requesting route: {route}");
                 var request = await GetAsync(route);
 
                 var content = await request.Content.ReadAsStringAsync();
 
                 if (request.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine($"Request at route \"{route}\" returned with status code {request.StatusCode}");
+                    debug($"Request at route \"{route}\" returned with status code {request.StatusCode}");
 
                     try
                     {
@@ -61,7 +60,7 @@ namespace circles.NET.V2.HTTP
                 } 
                 else
                 {
-                    Debug.WriteLine($"Request at route \"{route}\" returned with status code {request.StatusCode} and error body {content}");
+                    debug($"Request at route \"{route}\" returned with status code {request.StatusCode} and error body {content}");
 
                     if (request.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                         throw new InvalidOAuthTokenException(); //we may want to add some additional info for the required oauth scopes
@@ -73,6 +72,12 @@ namespace circles.NET.V2.HTTP
             {
                 throw e;
             }
+        }
+
+        private void debug(string str)
+        {
+            Console.Write("[circles.NET] ");
+            Console.WriteLine(str);
         }
     }
 }
